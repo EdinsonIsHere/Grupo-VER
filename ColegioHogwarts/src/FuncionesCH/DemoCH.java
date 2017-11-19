@@ -6,6 +6,8 @@ public class DemoCH {
         System.out.println("Bienvenido al programa del Colegio Hogwarts");
         System.out.println("Comienza el juego");
         System.out.println("Y ahora");
+        System.out.println("Ya está, ya entendi esto");
+        
     }
     
 }
