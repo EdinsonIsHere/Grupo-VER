@@ -7,9 +7,8 @@ import java.util.Scanner;
 public class Ingreso {
     private String usuario;
     private String contraseña;
-    private boolean usuarioValido;
-    private boolean contraseñaValida;
-    
+    private boolean acceso= false;
+   
     
     public Ingreso(){
         Scanner sc = new Scanner(System.in);
@@ -25,12 +24,17 @@ public class Ingreso {
         String linea = "";
         while((linea = archivo.readLine())!= null){
             if(linea.indexOf(",")!=-1){
-                if (linea.split(",")[0].equalsIgnoreCase(usuario)){
-                    usuarioValido = true;
+                if (linea.split(",")[0].equalsIgnoreCase(usuario) && linea.split(",")[1].equalsIgnoreCase(contraseña)){
+                    acceso= true
                     break;
                 }
             }
-
+        }
+        if (acceso== true){
+            System.out.println("Puede entrar");
+        else{
+            System.out.println(":O ");
+            }
         }
     }
     
