@@ -9,6 +9,23 @@ package FuncionesCH;
  *
  * @author CLARO
  */
-public class Estudiante {
-    
+public class Estudiante extends Persona {
+    private Casa casa;
+    private int materiasReg;
+
+    public Casa getCasa() {
+        return casa;
+    }
+
+    public void setCasa(Casa casa) {
+        this.casa = casa;
+    }
+
+    public int getMateriasReg() {
+        return materiasReg;
+    }
+
+    public void setMateriasReg(int materiasReg) {
+        this.materiasReg = materiasReg;
+    }
 }
