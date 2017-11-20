@@ -1,7 +1,9 @@
 package FuncionesCH;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.net.URI;
 import java.util.Scanner;
 
 public class Ingreso {
@@ -11,14 +13,15 @@ public class Ingreso {
    
     
     public Ingreso(){
+        System.out.println("Edinson está en esto ahora XD");
+        /*
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese su usuario: ");
-        usuario= sc.next();
+        usuario= sc.nextLine();
         System.out.println("Ingrese su contraseña: ");
-        contraseña= sc.next();
+        contraseña= sc.nextLine();
         
-        BufferedReader archivo = new BufferedReader( new FileReader(""
-                + "https://docs.google.com/document/d/1FftqXE5YHozby59kMHCTVANnmpd65txYZE2BfJMWu6A/edit?usp=sharing"));
+        FileReader archivo = new FileReader("datos.txt");
         
         //Validar el usuario
         String linea = "";
@@ -36,6 +39,8 @@ public class Ingreso {
             System.out.println(":O ");
             }
         }
+    */
+    
     }
     
     
