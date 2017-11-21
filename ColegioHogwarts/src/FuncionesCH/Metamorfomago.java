@@ -9,6 +9,14 @@ package FuncionesCH;
  *
  * @author CLARO
  */
-public enum Casa {
-    GRYFFINDOR, RAVENCLAW, HUFFLEPUFF, SLYTHERIN;
+public class Metamorfomago {
+    
+    private String pocion;
+    
+    public String getPocion(){
+        return pocion;
+    }
+    public void setPocion(String pocion){
+        this.pocion = pocion;
+    }
 }
