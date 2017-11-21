@@ -27,7 +27,7 @@ public class Ingreso {
             System.out.println("Ingrese su contraseña: ");
             contraseña= sc.nextLine();
             
-            FileReader archivo = new FileReader("C:\\Users\\PAQUITA\\Documents\\2017-II\\POO\\Proyecto\\Grupo-VER\\datos.txt");
+            FileReader archivo = new FileReader("..\\ColegioHogwarts\\datos.txt");
             System.out.println(archivo);
 
             BufferedReader br = new BufferedReader(archivo);
