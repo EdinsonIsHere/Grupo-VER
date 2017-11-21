@@ -10,7 +10,9 @@ package FuncionesCH;
  * @author CLARO
  */
 public class Profesor extends Persona{
+    
     private String fechaIngreso;
+    private String cosa;
 
     public String getFechaIngreso() {
         return fechaIngreso;

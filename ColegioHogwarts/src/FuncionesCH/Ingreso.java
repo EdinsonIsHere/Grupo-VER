@@ -1,6 +1,7 @@
 package FuncionesCH;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,8 +17,7 @@ public class Ingreso {
     
     public Ingreso() throws FileNotFoundException, IOException{
  
-        FileReader archivo = new FileReader("C:\\Users\\PAQUITA\\Documents\\2017-II\\POO\\Proyecto\\Grupo-VER\\datos.txt");
-        BufferedReader br = new BufferedReader(archivo);
+        
         
         Scanner sc = new Scanner(System.in);
         
@@ -27,8 +27,11 @@ public class Ingreso {
             System.out.println("Ingrese su contraseña: ");
             contraseña= sc.nextLine();
             
-            
+            FileReader archivo = new FileReader("C:\\Users\\PAQUITA\\Documents\\2017-II\\POO\\Proyecto\\Grupo-VER\\datos.txt");
+            System.out.println(archivo);
 
+            BufferedReader br = new BufferedReader(archivo);
+            
             while ((linea = br.readLine()) != null){
                 if (linea.split(",")[0].equalsIgnoreCase(usuario)){
                     if (linea.split(",")[1].equalsIgnoreCase(contraseña)){
@@ -39,7 +42,6 @@ public class Ingreso {
                     }
                 }
             }
-            System.out.println(acceso);
             if (acceso == true) break;
             
             System.out.println("El usuario o contraseña no son válidos.");
