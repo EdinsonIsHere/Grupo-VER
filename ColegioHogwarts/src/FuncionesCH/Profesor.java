@@ -10,7 +10,9 @@ package FuncionesCH;
  * @author CLARO
  */
 public class Profesor extends Persona{
+    
     private String fechaIngreso;
+    private String cosa;
 
     public Profesor(String fechaIngreso, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
