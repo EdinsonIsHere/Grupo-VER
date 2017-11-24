@@ -10,5 +10,6 @@ public class DemoCH {
         Ingreso comenzar = new Ingreso();
         String tipoPersona = comenzar.getTipoAcceso();
         System.out.println("El tipo de persona es : "+ tipoPersona);
+        
     }
 }

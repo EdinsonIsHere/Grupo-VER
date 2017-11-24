@@ -18,68 +18,133 @@ public class Planificador extends Persona {
         super(nombre, apellido, edad, varita, tipoMago);
     }
 
+    public static void main(String args[]) {
+        crearCurso();
+    }
+
     public static void crearCurso() {
         Scanner sc = new Scanner(System.in);
-        Curso C = new Curso();
         while (true) {
             showMaterias();
             System.out.println("Elija una materia del listado de materias: ");
             int num = sc.nextInt();
             sc.nextLine();
-            switch (num) {
-                case (1):
-                    C.setMateria(Materia.POCIONES);
-                    break;
-                case (2):
-                    C.setMateria(Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS);
-                    break;
-                case (3):
-                    C.setMateria(Materia.ADIVINACION);
-                    break;
-                case (4):
-                    C.setMateria(Materia.ASTRONOMIA);
-                    break;
-                case (5):
-                    C.setMateria(Materia.HISTORIA_DE_LA_MAGIA);
-                    break;
-                case (6):
-                    C.setMateria(Materia.HERBOLOGIA);
-                    break;
-                case (7):
-                    C.setMateria(Materia.ENCANTAMIENTO);
-                    break;
-                case (8):
-                    C.setMateria(Materia.VUELO);
-                    break;
-                default:
-                    System.out.println("Opción inválida, ingrese de nuevo: ");
-                    break;
+            Materia M = null;
+            while (true) {
+                if (existeCurso(num) == false) {
+                    switch (num) {
+                        case (1):
+                            M = Materia.POCIONES;
+                            break;
+                        case (2):
+                            M = Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS;
+                            break;
+                        case (3):
+                            M = Materia.ADIVINACION;
+                            break;
+                        case (4):
+                            M = Materia.ASTRONOMIA;
+                            break;
+                        case (5):
+                            M = Materia.HISTORIA_DE_LA_MAGIA;
+                            break;
+                        case (6):
+                            M = Materia.HERBOLOGIA;
+                            break;
+                        case (7):
+                            M = Materia.ENCANTAMIENTO;
+                            break;
+                        case (8):
+                            M = Materia.VUELO;
+                            break;
+                        default:
+                            System.out.println("Opción inválida, ingrese de nuevo: ");
+                            break;
+                    }
+                } else {
+                    System.out.println("¡El curso ya existe, ingrese otro!");
+                }
+                break;
             }
             System.out.println("\n");
             showProfesores();
             System.out.println("Elija un profesor del listado: ");
+            Profesor P;
             while (true) {
                 int eleccion = sc.nextInt();
                 if (eleccion <= (Academico_Hogwarts.profesores).size() && eleccion >= 0) {
-                    C.setProfesor((Academico_Hogwarts.profesores).get(eleccion));
+                    P = (Academico_Hogwarts.profesores).get(eleccion);
                     break;
                 } else {
                     System.out.println("La opción es inválida, ingrese de nuevo: ");
                 }
             }
-            System.out.println("\nIngrese la capacidad del curso para " + (C.getMateria()).toString());
+            System.out.println("\nIngrese la capacidad del curso para " + M.toString());
             int cap = sc.nextInt();
-            C.setCapacidad(cap);
 
             System.out.println("\nIngrese el día: ");
             String dia = sc.nextLine();
-            C.setDia(dia);
+            Dia d = elegirDia(dia);
 
             System.out.println("Ingrese el horario del curso: ");
             String hora = sc.nextLine();
-            C.setHorario(hora);
+
+            System.out.println("\n¿Desea crear el curso con la información establecida? S/N");
+            String conf = sc.nextLine();
+            if (conf.equalsIgnoreCase("s")) {
+                Curso C = new Curso(M, P, cap, d, hora);
+                (Academico_Hogwarts.horarios).add(C);
+                System.out.println("Se ha creado el curso:\n");
+                System.out.println("MATERIA: " + C.getMateria());
+                System.out.println("PROFESOR: " + (C.getProfesor()).getNombre() + " " + (C.getProfesor()).getApellido());
+                System.out.println("CAPACIDAD: " + C.getCapacidad());
+                System.out.println("HORARIO: " + C.getDia() + " " + C.getHorario());
+                break;
+            } else if (conf.equalsIgnoreCase("n")) {
+                System.out.println("¡Se volverá a pedir datos!");
+            } else {
+                System.out.println("Sólo puede ingresar S en caso que desee guardar ó N en caso de volver a ingresar los datos.");
+            }
 
         }
+    }
+
+    public static boolean existeCurso(int num) {
+        Materia M = null;
+        if (num <= 8 && num > 0) {
+            switch (num) {
+                case (1):
+                    M = Materia.POCIONES;
+                    break;
+                case (2):
+                    M = Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS;
+                    break;
+                case (3):
+                    M = Materia.ADIVINACION;
+                    break;
+                case (4):
+                    M = Materia.ASTRONOMIA;
+                    break;
+                case (5):
+                    M = Materia.HISTORIA_DE_LA_MAGIA;
+                    break;
+                case (6):
+                    M = Materia.HERBOLOGIA;
+                    break;
+                case (7):
+                    M = Materia.ENCANTAMIENTO;
+                    break;
+                case (8):
+                    M = Materia.VUELO;
+                    break;
+            }
+        }
+        for (Curso C : (Academico_Hogwarts.horarios)) {
+            if (C.getMateria() == M) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void showMaterias() {
@@ -161,7 +226,7 @@ public class Planificador extends Persona {
 
         System.out.println("Casa: ");
         String casa = sc.nextLine();
-        
+
         Casa c = elegirCasa(casa);
 
         Hechizero H = elegirTipoMago();
@@ -209,6 +274,36 @@ public class Planificador extends Persona {
         }
     }
 
+    public static Dia elegirDia(String dia) {
+        Dia d;
+        while (true) {
+            if (dia.equalsIgnoreCase("lunes")) {
+                d = Dia.LUNES;
+                return d;
+            } else if (dia.equalsIgnoreCase("martes")) {
+                d = Dia.MARTES;
+                return d;
+            } else if (dia.equalsIgnoreCase("miercoles")) {
+                d = Dia.MIERCOLES;
+                return d;
+            } else if (dia.equalsIgnoreCase("jueves")) {
+                d = Dia.JUEVES;
+                return d;
+            } else if (dia.equalsIgnoreCase("viernes")) {
+                d = Dia.VIERNES;
+                return d;
+            } else if (dia.equalsIgnoreCase("sabado")) {
+                d = Dia.SABADO;
+                return d;
+            } else if (dia.equalsIgnoreCase("domingo")) {
+                d = Dia.DOMINGO;
+                return d;
+            } else {
+                System.out.println("Solo puede elegir entre los días de la semana.");
+            }
+        }
+    }
+
     public static Hechizero elegirTipoMago() {
         Scanner sc = new Scanner(System.in);
         showTiposMagos();
@@ -239,6 +334,10 @@ public class Planificador extends Persona {
                     System.out.println("\n¡La opción no existe, ingrese de nuevo!");
             }
         }
+    }
+    
+    public static void verHorarios(){
+        
     }
 
 }
