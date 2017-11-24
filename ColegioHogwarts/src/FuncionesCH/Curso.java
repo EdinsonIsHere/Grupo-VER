@@ -11,7 +11,7 @@ package FuncionesCH;
  */
 public class Curso {
     private Materia materia;
-    private String profesor;//cambio1
+    private Profesor profesor;
     private int capacidad;
     private String dia;
     private String horario;
@@ -27,11 +27,11 @@ public class Curso {
         this.materia = materia;
     }
 
-    public String getProfesor() {
-        return profesor;//cambio2
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
 
