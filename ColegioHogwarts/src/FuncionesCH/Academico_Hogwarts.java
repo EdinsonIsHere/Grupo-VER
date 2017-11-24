@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Academico_Hogwarts {
     
-    private static ArrayList<Estudiante> estudiantes;
+    public static ArrayList<Estudiante> estudiantes;
     private static ArrayList<Curso> horarios;
     public static ArrayList<Profesor> profesores;
 
@@ -39,7 +39,5 @@ public class Academico_Hogwarts {
     public void setProfesores(ArrayList<Profesor> profesores) {
         this.profesores = profesores;
     }
-    
-    
     
 }

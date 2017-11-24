@@ -12,6 +12,11 @@ package FuncionesCH;
 public class Animago extends Hechizero{
     private String animal;
     private String hechizo;
+    
+    public Animago(String animal,String hechizo){
+        this.animal=animal;
+        this.hechizo=hechizo;
+    }
 
     public String getAnimal() {
         return animal;

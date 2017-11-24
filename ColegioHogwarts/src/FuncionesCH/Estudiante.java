@@ -11,7 +11,12 @@ package FuncionesCH;
  */
 public class Estudiante extends Persona {
     private Casa casa;
-    private int materiasReg;
+    private static int materiasReg;
+
+    public Estudiante(Casa casa, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+        super(nombre, apellido, edad, varita, tipoMago);
+        this.casa = casa;
+    }
 
     public Casa getCasa() {
         return casa;

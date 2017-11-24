@@ -9,9 +9,13 @@ package FuncionesCH;
  *
  * @author CLARO
  */
-public class Metamorfomago {
+public class Metamorfomago extends Hechizero{
     
     private String pocion;
+
+    public Metamorfomago(String pocion) {
+        this.pocion = pocion;
+    }
     
     public String getPocion(){
         return pocion;

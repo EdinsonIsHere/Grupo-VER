@@ -12,6 +12,11 @@ package FuncionesCH;
 public class Profesor extends Persona{
     private String fechaIngreso;
 
+    public Profesor(String fechaIngreso, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+        super(nombre, apellido, edad, varita, tipoMago);
+        this.fechaIngreso = fechaIngreso;
+    }
+    
     public String getFechaIngreso() {
         return fechaIngreso;
     }

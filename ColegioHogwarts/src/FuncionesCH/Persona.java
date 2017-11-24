@@ -17,6 +17,14 @@ public class Persona {
     private String varita;
     private Hechizero tipoMago;
 
+    public Persona(String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.varita = varita;
+        this.tipoMago = tipoMago;
+    }
+
     public String getNombre() {
         return nombre;
     }
