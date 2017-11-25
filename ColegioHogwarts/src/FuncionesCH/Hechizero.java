@@ -9,6 +9,6 @@ package FuncionesCH;
  *
  * @author CLARO
  */
-public class Hechizero {
+public abstract class Hechizero implements Volador {
     
 }

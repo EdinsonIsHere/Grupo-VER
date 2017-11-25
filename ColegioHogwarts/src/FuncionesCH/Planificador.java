@@ -345,7 +345,7 @@ public class Planificador extends Persona {
             System.out.println("Elija una materia del listado de materias: ");
             int num = sc.nextInt();
             sc.nextLine();
-            Curso curso = (Academico_Hogwarts.horarios).get(num);
+            Curso curso = (Academico_Hogwarts.horarios).get(num-1);
             
             System.out.println("MATERIA: " + curso.getMateria());
             System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre()+" "+(curso.getProfesor()).getApellido());

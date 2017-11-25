@@ -16,6 +16,12 @@ public class Academico_Hogwarts {
     public static ArrayList<Curso> horarios;
     public static ArrayList<Profesor> profesores;
 
+    public Academico_Hogwarts() {
+        estudiantes = new ArrayList();
+        horarios = new ArrayList();
+        profesores = new ArrayList();
+    }
+
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }

@@ -33,4 +33,14 @@ public class Animago extends Hechizero{
     public void setHechizo(String hechizo) {
         this.hechizo = hechizo;
     }
+    
+    @Override
+    public void despegar(){
+        System.out.println("¡El animago ha despegado!\n");
+    }
+    
+    @Override
+    public void volar(){
+        System.out.println("El animago puede volar con ayuda de su varita.\n");
+    }
 }

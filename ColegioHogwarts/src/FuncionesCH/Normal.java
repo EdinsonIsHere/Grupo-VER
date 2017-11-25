@@ -24,5 +24,14 @@ public class Normal extends Hechizero{
         this.deporte = deporte;
     }
     
+    @Override
+    public void despegar(){
+        System.out.println("¡El mago normal ha despegado!\n");
+    }
+    
+    @Override
+    public void volar(){
+        System.out.println("El mago normal puede volar con ayuda de su escoba Nimbus 2000.\n");
+    }
     
 }

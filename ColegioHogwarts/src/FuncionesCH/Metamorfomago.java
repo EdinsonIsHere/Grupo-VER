@@ -23,4 +23,14 @@ public class Metamorfomago extends Hechizero{
     public void setPocion(String pocion){
         this.pocion = pocion;
     }
+    
+    @Override
+    public void despegar(){
+        System.out.println("¡El metamorfomago ha despegado!\n");
+    }
+    
+    @Override
+    public void volar(){
+        System.out.println("El metamorfomago puede volar con ayuda de su poder, sin varita ni escoba.\n");
+    }
 }
