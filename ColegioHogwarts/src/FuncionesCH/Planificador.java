@@ -18,10 +18,6 @@ public class Planificador extends Persona {
         super(nombre, apellido, edad, varita, tipoMago);
     }
 
-    public static void main(String args[]) {
-        crearCurso();
-    }
-
     public static void crearCurso() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -337,6 +333,28 @@ public class Planificador extends Persona {
     }
     
     public static void verHorarios(){
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Curso> cursos = Academico_Hogwarts.horarios;
+        if (cursos != null){
+            int i=1;
+            System.out.println("/** CURSOS PLANIFICADOS **/");
+            for(Curso C: cursos){
+                System.out.println(i+". "+C.getMateria());
+                i++;
+            }
+            System.out.println("Elija una materia del listado de materias: ");
+            int num = sc.nextInt();
+            sc.nextLine();
+            Curso curso = (Academico_Hogwarts.horarios).get(num);
+            
+            System.out.println("MATERIA: " + curso.getMateria());
+            System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre()+" "+(curso.getProfesor()).getApellido());
+            System.out.println("HORARIO: " + curso.getDia()+", "+curso.getHorario());
+            System.out.println("REGISTRADOS: " + curso.getRegistrados());
+            
+        }else{
+            System.out.println("¡Aún no hay cursos creados!");
+        }
         
     }
 

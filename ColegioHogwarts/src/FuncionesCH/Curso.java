@@ -15,6 +15,7 @@ public class Curso {
     private int capacidad;
     private Dia dia;
     private String horario;
+    private static int registrados = 0;
     
     public Curso(){
     }
@@ -65,6 +66,14 @@ public class Curso {
 
     public void setHorario(String horario) {
         this.horario = horario;
+    }
+
+    public static int getRegistrados() {
+        return registrados;
+    }
+
+    public static void setRegistrados(int registrados) {
+        Curso.registrados = registrados;
     }
     
 }
