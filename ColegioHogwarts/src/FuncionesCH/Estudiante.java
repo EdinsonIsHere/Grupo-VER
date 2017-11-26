@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 package FuncionesCH;
-
 /**
  *
  * @author CLARO
  */
-public class Estudiante extends Persona {
+public class Estudiante extends Persona implements Comparable<Estudiante>{
     private Casa casa;
     private static int materiasReg = 0;
 
@@ -38,5 +37,14 @@ public class Estudiante extends Persona {
     public String toString(){
         String frase= getNombre()+" "+getApellido()+"  --  "+getEdad()+" años  --  "+getCasa()+"  --  "+getMateriasReg()+" materias";
         return frase;
+    }
+    
+    @Override
+    public int compareTo(Estudiante e){
+        if( this.getNombre().equalsIgnoreCase(e.getNombre()) ){
+            return this.getApellido().compareTo(e.getApellido());
+        } else{
+            return this.getNombre().compareTo(e.getNombre());
+        }
     }
 }

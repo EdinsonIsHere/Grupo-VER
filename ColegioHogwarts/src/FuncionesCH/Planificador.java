@@ -7,6 +7,7 @@ package FuncionesCH;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -358,7 +359,7 @@ public class Planificador extends Persona {
 
     }
 
-    public static void verListadoEstudiantes() {
+    public  void verListadoEstudiantes() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Estudiante> ests = Academico_Hogwarts.estudiantes;
         System.out.println("/** LISTADO DE ESTUDIANTES **/");
@@ -371,7 +372,7 @@ public class Planificador extends Persona {
             sc.nextLine();
             if (num <= 3 && num > 0) {
                 if (num == 1) {
-                    ordenarPorNombre(ests);
+                    Collections.sort(ests);
                     break;
                 } else if (num == 2) {
                     ordenarPorEdad(ests);
