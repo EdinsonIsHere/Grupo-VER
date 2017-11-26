@@ -331,31 +331,72 @@ public class Planificador extends Persona {
             }
         }
     }
-    
-    public static void verHorarios(){
+
+    public static void verHorarios() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Curso> cursos = Academico_Hogwarts.horarios;
-        if (cursos != null){
-            int i=1;
+        if (cursos != null) {
+            int i = 1;
             System.out.println("/** CURSOS PLANIFICADOS **/");
-            for(Curso C: cursos){
-                System.out.println(i+". "+C.getMateria());
+            for (Curso C : cursos) {
+                System.out.println(i + ". " + C.getMateria());
                 i++;
             }
             System.out.println("Elija una materia del listado de materias: ");
             int num = sc.nextInt();
             sc.nextLine();
-            Curso curso = (Academico_Hogwarts.horarios).get(num-1);
-            
+            Curso curso = (Academico_Hogwarts.horarios).get(num - 1);
+
             System.out.println("MATERIA: " + curso.getMateria());
-            System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre()+" "+(curso.getProfesor()).getApellido());
-            System.out.println("HORARIO: " + curso.getDia()+", "+curso.getHorario());
+            System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre() + " " + (curso.getProfesor()).getApellido());
+            System.out.println("HORARIO: " + curso.getDia() + ", " + curso.getHorario());
             System.out.println("REGISTRADOS: " + curso.getRegistrados());
-            
-        }else{
+
+        } else {
             System.out.println("¡Aún no hay cursos creados!");
         }
-        
+
+    }
+
+    public static void verListadoEstudiantes() {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Estudiante> ests = Academico_Hogwarts.estudiantes;
+        System.out.println("/** LISTADO DE ESTUDIANTES **/");
+        System.out.println("1. Edad");
+        System.out.println("2. Nombre");
+        System.out.println("3. Número de materias registradas");
+        System.out.println("Elija el criterio para ordenar: ");
+        while (true) {
+            int num = sc.nextInt();
+            sc.nextLine();
+            if (num <= 3 && num > 0) {
+                if (num == 1) {
+                    ordenarPorNombre(ests);
+                    break;
+                } else if (num == 2) {
+                    ordenarPorEdad(ests);
+                    break;
+                } else if (num == 3) {
+                    ordenarPorNumMatReg(ests);
+                    break;
+                }
+            } else {
+                System.out.println("Dicha opción no existe, elija de nuevo:");
+            }
+        }
+
+    }
+
+    public static void ordenarPorNombre(ArrayList<Estudiante> estudiantes) {
+
+    }
+
+    public static void ordenarPorEdad(ArrayList<Estudiante> estudiantes) {
+
+    }
+
+    public static void ordenarPorNumMatReg(ArrayList<Estudiante> estudiantes) {
+
     }
 
 }
