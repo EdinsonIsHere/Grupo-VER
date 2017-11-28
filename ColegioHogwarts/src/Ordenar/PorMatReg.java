@@ -4,11 +4,22 @@
  * and open the template in the editor.
  */
 package Ordenar;
+import java.util.Comparator;
+import FuncionesCH.Estudiante;
 
 /**
  *
  * @author CLARO
  */
-public class PorMatReg {
+public class PorMatReg implements Comparator<Estudiante> {
     
+    @Override
+    public int compare(Estudiante e1, Estudiante e2){
+        if (e1.getMateriasReg() > e2.getMateriasReg()) return 1;
+        if (e1.getMateriasReg() < e2.getMateriasReg()) return -1;
+        if (e1.getMateriasReg() == e2.getMateriasReg()){
+            return e1.getNombre().compareTo(e2.getNombre());
+        }
+        return 0;
+    }
 }

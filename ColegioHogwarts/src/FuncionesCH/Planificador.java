@@ -8,6 +8,8 @@ package FuncionesCH;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
+import Ordenar.PorEdad;
+import Ordenar.PorMatReg;
 
 /**
  *
@@ -359,7 +361,7 @@ public class Planificador extends Persona {
 
     }
 
-    public  void verListadoEstudiantes() {
+    public void verListadoEstudiantes() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Estudiante> ests = Academico_Hogwarts.estudiantes;
         System.out.println("/** LISTADO DE ESTUDIANTES **/");
@@ -373,12 +375,15 @@ public class Planificador extends Persona {
             if (num <= 3 && num > 0) {
                 if (num == 1) {
                     Collections.sort(ests);
+                    showListado(ests);
                     break;
                 } else if (num == 2) {
-                    ordenarPorEdad(ests);
+                    Collections.sort(ests, new PorEdad());
+                    showListado(ests);
                     break;
                 } else if (num == 3) {
-                    ordenarPorNumMatReg(ests);
+                    Collections.sort(ests, new PorMatReg());
+                    showListado(ests);
                     break;
                 }
             } else {
@@ -387,17 +392,11 @@ public class Planificador extends Persona {
         }
 
     }
-
-    public static void ordenarPorNombre(ArrayList<Estudiante> estudiantes) {
-
-    }
-
-    public static void ordenarPorEdad(ArrayList<Estudiante> estudiantes) {
-
-    }
-
-    public static void ordenarPorNumMatReg(ArrayList<Estudiante> estudiantes) {
-
+    
+    public static void showListado(ArrayList<Estudiante> ests){
+        for (Estudiante e: ests){
+            System.out.println(e.toString());
+        }
     }
 
 }
