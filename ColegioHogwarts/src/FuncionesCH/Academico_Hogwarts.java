@@ -12,9 +12,9 @@ import java.util.ArrayList;
  */
 public class Academico_Hogwarts {
     
-    public static ArrayList<Estudiante> estudiantes;
-    public static ArrayList<Curso> horarios;
-    public static ArrayList<Profesor> profesores;
+    private ArrayList<Estudiante> estudiantes;
+    private ArrayList<Curso> horarios;
+    private ArrayList<Profesor> profesores;
 
     public Academico_Hogwarts() {
         estudiantes = new ArrayList();

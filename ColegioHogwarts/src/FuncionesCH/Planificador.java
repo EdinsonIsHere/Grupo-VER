@@ -21,7 +21,7 @@ public class Planificador extends Persona {
         super(nombre, apellido, edad, varita, tipoMago);
     }
 
-    public static void crearCurso() {
+    public void crearCurso(Academico_Hogwarts AH) {
         Scanner sc = new Scanner(System.in);
         while (true) {
             showMaterias();
@@ -30,7 +30,7 @@ public class Planificador extends Persona {
             sc.nextLine();
             Materia M = null;
             while (true) {
-                if (existeCurso(num) == false) {
+                if (existeCurso(num,AH) == false) {
                     switch (num) {
                         case (1):
                             M = Materia.POCIONES;
@@ -66,13 +66,13 @@ public class Planificador extends Persona {
                 break;
             }
             System.out.println("\n");
-            showProfesores();
+            showProfesores(AH);
             System.out.println("Elija un profesor del listado: ");
             Profesor P;
             while (true) {
                 int eleccion = sc.nextInt();
-                if (eleccion <= (Academico_Hogwarts.profesores).size() && eleccion >= 0) {
-                    P = (Academico_Hogwarts.profesores).get(eleccion);
+                if (eleccion <= (AH.getProfesores()).size() && eleccion >= 0) {
+                    P = AH.getProfesores().get(eleccion);
                     break;
                 } else {
                     System.out.println("La opción es inválida, ingrese de nuevo: ");
@@ -92,7 +92,7 @@ public class Planificador extends Persona {
             String conf = sc.nextLine();
             if (conf.equalsIgnoreCase("s")) {
                 Curso C = new Curso(M, P, cap, d, hora);
-                (Academico_Hogwarts.horarios).add(C);
+                (AH.getHorarios()).add(C);
                 System.out.println("Se ha creado el curso:\n");
                 System.out.println("MATERIA: " + C.getMateria());
                 System.out.println("PROFESOR: " + (C.getProfesor()).getNombre() + " " + (C.getProfesor()).getApellido());
@@ -108,7 +108,7 @@ public class Planificador extends Persona {
         }
     }
 
-    public static boolean existeCurso(int num) {
+    public static boolean existeCurso(int num, Academico_Hogwarts AH) {
         Materia M = null;
         if (num <= 8 && num > 0) {
             switch (num) {
@@ -138,7 +138,7 @@ public class Planificador extends Persona {
                     break;
             }
         }
-        for (Curso C : (Academico_Hogwarts.horarios)) {
+        for (Curso C : AH.getHorarios()) {
             if (C.getMateria() == M) {
                 return true;
             }
@@ -146,7 +146,7 @@ public class Planificador extends Persona {
         return false;
     }
 
-    public static void showMaterias() {
+    private static void showMaterias() {
         System.out.println("/** MATERIAS **/\n");
         System.out.println("1. Pociones");
         System.out.println("2. Defensa contra las artes oscuras");
@@ -158,8 +158,8 @@ public class Planificador extends Persona {
         System.out.println("8. Vuelo");
     }
 
-    public static void showProfesores() {
-        ArrayList<Profesor> profes = Academico_Hogwarts.profesores;
+    private static void showProfesores(Academico_Hogwarts AH) {
+        ArrayList<Profesor> profes = AH.getProfesores();
         if (profes != null) {
             System.out.println("/** PROFESORES **/");
             int i = 1;
@@ -172,7 +172,7 @@ public class Planificador extends Persona {
         }
     }
 
-    public static void crearProfesor() {
+    public void crearProfesor(ArrayList<Profesor> profes) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** CREAR PROFESOR **/");
 
@@ -197,7 +197,7 @@ public class Planificador extends Persona {
         String conf = sc.nextLine();
         if (conf.equalsIgnoreCase("s")) {
             Profesor profe = new Profesor(fechaIn, nombre, apellidos, edad, varita, H);
-            (Academico_Hogwarts.profesores).add(profe);
+            profes.add(profe);
             System.out.println("Sus datos se han guardado correctamente");
         } else if (conf.equalsIgnoreCase("n")) {
             System.out.println("¡Se volverá a pedir datos!");
@@ -207,7 +207,7 @@ public class Planificador extends Persona {
 
     }
 
-    public static void crearEstudiante() {
+    public void crearEstudiante(ArrayList<Estudiante> estudiantes) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** CREAR ESTUDIANTE **/");
 
@@ -235,7 +235,7 @@ public class Planificador extends Persona {
         String conf = sc.nextLine();
         if (conf.equalsIgnoreCase("s")) {
             Estudiante est = new Estudiante(c, nombre, apellidos, edad, varita, H);
-            (Academico_Hogwarts.estudiantes).add(est);
+            estudiantes.add(est);
             System.out.println("Sus datos se han guardado correctamente");
         } else if (conf.equalsIgnoreCase("n")) {
             System.out.println("¡Se volverá a pedir datos!");
@@ -335,9 +335,8 @@ public class Planificador extends Persona {
         }
     }
 
-    public static void verHorarios() {
+    public void verHorarios(ArrayList<Curso> cursos) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Curso> cursos = Academico_Hogwarts.horarios;
         if (cursos != null) {
             int i = 1;
             System.out.println("/** CURSOS PLANIFICADOS **/");
@@ -348,7 +347,7 @@ public class Planificador extends Persona {
             System.out.println("Elija una materia del listado de materias: ");
             int num = sc.nextInt();
             sc.nextLine();
-            Curso curso = (Academico_Hogwarts.horarios).get(num - 1);
+            Curso curso = cursos.get(num - 1);
 
             System.out.println("MATERIA: " + curso.getMateria());
             System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre() + " " + (curso.getProfesor()).getApellido());
@@ -361,9 +360,8 @@ public class Planificador extends Persona {
 
     }
 
-    public void verListadoEstudiantes() {
+    public void verListadoEstudiantes(ArrayList<Estudiante> estudiantes) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Estudiante> ests = Academico_Hogwarts.estudiantes;
         System.out.println("/** LISTADO DE ESTUDIANTES **/");
         System.out.println("1. Edad");
         System.out.println("2. Nombre");
@@ -374,16 +372,16 @@ public class Planificador extends Persona {
             sc.nextLine();
             if (num <= 3 && num > 0) {
                 if (num == 1) {
-                    Collections.sort(ests);
-                    showListado(ests);
+                    Collections.sort(estudiantes);
+                    showListado(estudiantes);
                     break;
                 } else if (num == 2) {
-                    Collections.sort(ests, new PorEdad());
-                    showListado(ests);
+                    Collections.sort(estudiantes, new PorEdad());
+                    showListado(estudiantes);
                     break;
                 } else if (num == 3) {
-                    Collections.sort(ests, new PorMatReg());
-                    showListado(ests);
+                    Collections.sort(estudiantes, new PorMatReg());
+                    showListado(estudiantes);
                     break;
                 }
             } else {
