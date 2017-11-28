@@ -216,6 +216,7 @@ public class Planificador extends Persona {
         if (conf.equalsIgnoreCase("s")) {
             Profesor profe = new Profesor(fechaIn, nombre, apellidos, edad, varita, H);
             profes.add(profe);
+            addProfesoresTXT(profe);
             System.out.println("Sus datos se han guardado correctamente");
         } else if (conf.equalsIgnoreCase("n")) {
             System.out.println("¡Se volverá a pedir datos!");
@@ -225,7 +226,7 @@ public class Planificador extends Persona {
 
     }
 
-    public void addProfesoresTXT(Profesor P) {
+    public static void addProfesoresTXT(Profesor P) {
         PrintWriter outputStream = null;
         try {
             outputStream = new PrintWriter("..\\ColegioHogwarts\\profesores.txt");
@@ -276,6 +277,7 @@ public class Planificador extends Persona {
         if (conf.equalsIgnoreCase("s")) {
             Estudiante est = new Estudiante(c, nombre, apellidos, edad, varita, H);
             estudiantes.add(est);
+            addEstudiantesTXT(est);
             System.out.println("Sus datos se han guardado correctamente");
         } else if (conf.equalsIgnoreCase("n")) {
             System.out.println("¡Se volverá a pedir datos!");
