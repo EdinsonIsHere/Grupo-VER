@@ -8,6 +8,9 @@ package FuncionesCH;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import Ordenar.PorEdad;
 import Ordenar.PorMatReg;
 
@@ -30,7 +33,7 @@ public class Planificador extends Persona {
             sc.nextLine();
             Materia M = null;
             while (true) {
-                if (existeCurso(num,AH) == false) {
+                if (existeCurso(num, AH) == false) {
                     switch (num) {
                         case (1):
                             M = Materia.POCIONES;
@@ -93,6 +96,7 @@ public class Planificador extends Persona {
             if (conf.equalsIgnoreCase("s")) {
                 Curso C = new Curso(M, P, cap, d, hora);
                 (AH.getHorarios()).add(C);
+                addCursosTXT(C);
                 System.out.println("Se ha creado el curso:\n");
                 System.out.println("MATERIA: " + C.getMateria());
                 System.out.println("PROFESOR: " + (C.getProfesor()).getNombre() + " " + (C.getProfesor()).getApellido());
@@ -108,7 +112,21 @@ public class Planificador extends Persona {
         }
     }
 
-    public static boolean existeCurso(int num, Academico_Hogwarts AH) {
+    public static void addCursosTXT(Curso curso) {
+        PrintWriter outputStream = null;
+        try {
+            outputStream = new PrintWriter("..\\ColegioHogwarts\\cursos.txt");
+            outputStream.println(curso.getMateria() + "," + (curso.getProfesor()).getNombre() + " " + (curso.getProfesor()).getApellido() + "," + curso.getDia() + "," + curso.getHorario() + "," + curso.getCapacidad());
+
+        } catch (FileNotFoundException e) {
+            System.out.println("¡Archivo no encontrado!");
+            System.exit(0);
+        } finally {
+            outputStream.close();
+        }
+    }
+
+    private static boolean existeCurso(int num, Academico_Hogwarts AH) {
         Materia M = null;
         if (num <= 8 && num > 0) {
             switch (num) {
@@ -207,6 +225,28 @@ public class Planificador extends Persona {
 
     }
 
+    public void addProfesoresTXT(Profesor P) {
+        PrintWriter outputStream = null;
+        try {
+            outputStream = new PrintWriter("..\\ColegioHogwarts\\profesores.txt");
+            Hechizero H = P.getTipoMago();
+            if (H instanceof Animago) {
+                outputStream.println(P.getNombre() + "," + P.getApellido() + "," +  P.getEdad() + "," + P.getVarita() + "," + P.getFechaIngreso() + ",Animago,"+ ((Animago) H).getAnimal()+","+((Animago)H).getHechizo()+",null,null");
+            }else if (H instanceof Metamorfomago) {
+                outputStream.println(P.getNombre() + "," + P.getApellido() + "," +  P.getEdad() + "," + P.getVarita() + "," + P.getFechaIngreso() + ",Metamorfomago,null,null,"+((Metamorfomago)H).getPocion()+",null");
+            }else if (H instanceof Normal){
+                outputStream.println(P.getNombre() + "," + P.getApellido() + "," +  P.getEdad() + "," + P.getVarita() + "," + P.getFechaIngreso() + ",Normal,null,null,null,"+((Normal)H).getDeporte());
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("¡Archivo no encontrado!");
+            System.exit(0);
+        } finally {
+            outputStream.close();
+        }
+
+    }
+
     public void crearEstudiante(ArrayList<Estudiante> estudiantes) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** CREAR ESTUDIANTE **/");
@@ -245,14 +285,34 @@ public class Planificador extends Persona {
 
     }
 
-    public static void showTiposMagos() {
+    public static void addEstudiantesTXT(Estudiante e) {
+        PrintWriter outputStream = null;
+        try {
+            outputStream = new PrintWriter("..\\ColegioHogwarts\\estudiantes.txt");
+            if (e.getTipoMago() instanceof Animago) {
+                outputStream.println(e.getNombre() + "," + e.getApellido() + "," + e.getEdad() + "," + e.getVarita() + "," + e.getCasa() + "," + "Animago");
+            }else if (e.getTipoMago() instanceof Metamorfomago) {
+                outputStream.println(e.getNombre() + "," + e.getApellido() + "," + e.getEdad() + "," + e.getVarita() + "," + e.getCasa() + "," + "Metamorfomago");
+            }else if (e.getTipoMago() instanceof Normal){
+                outputStream.println(e.getNombre() + "," + e.getApellido() + "," + e.getEdad() + "," + e.getVarita() + "," + e.getCasa() + "," + "Normal");
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("¡Archivo no encontrado!");
+            System.exit(0);
+        } finally {
+            outputStream.close();
+        }
+    }
+
+    private static void showTiposMagos() {
         System.out.println("Tipos de Magos/Brujas");
         System.out.println("1.Animago");
         System.out.println("2.Metamorfomago");
         System.out.println("3.Estandar");
     }
 
-    public static Casa elegirCasa(String casa) {
+    private static Casa elegirCasa(String casa) {
         Casa c;
         while (true) {
             if (casa.equalsIgnoreCase("gryffindor")) {
@@ -273,7 +333,7 @@ public class Planificador extends Persona {
         }
     }
 
-    public static Dia elegirDia(String dia) {
+    private static Dia elegirDia(String dia) {
         Dia d;
         while (true) {
             if (dia.equalsIgnoreCase("lunes")) {
@@ -303,7 +363,7 @@ public class Planificador extends Persona {
         }
     }
 
-    public static Hechizero elegirTipoMago() {
+    private static Hechizero elegirTipoMago() {
         Scanner sc = new Scanner(System.in);
         showTiposMagos();
         System.out.println("Elija el tipo de mago/bruja que es:");
@@ -390,9 +450,9 @@ public class Planificador extends Persona {
         }
 
     }
-    
-    public static void showListado(ArrayList<Estudiante> ests){
-        for (Estudiante e: ests){
+
+    public static void showListado(ArrayList<Estudiante> ests) {
+        for (Estudiante e : ests) {
             System.out.println(e.toString());
         }
     }
