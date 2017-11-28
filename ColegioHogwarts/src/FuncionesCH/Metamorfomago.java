@@ -5,10 +5,6 @@
  */
 package FuncionesCH;
 
-/**
- *
- * @author CLARO
- */
 public class Metamorfomago {
     
     private String pocion;

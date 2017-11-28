@@ -1,25 +1,44 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package FuncionesCH;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
-/**
- *
- * @author CLARO
- */
 public class Planificador extends Persona {
-
+    
+    public void opcionesP(){
+        Scanner sc = new Scanner(System.in);
+        
+        showOpcP();
+        
+        System.out.print(">>Elija una opción: ");
+        int opc = sc.nextInt();  
+        
+        switch (opc) {
+            case(1): 
+                crearCurso();
+                break;
+            case(2):
+                Profesor profe = new Profesor();
+                profe.crearProfesor();
+                break;
+                
+        }
+        
+    }
+    public static void showOpcP() {
+        System.out.println("\n/** Qué desea hacer? **/");
+        System.out.println("1. Crear curso");
+        System.out.println("2. Crear Profesor");
+        System.out.println("3. Crear estudiante");
+        System.out.println("4. Ver Horarios Planificados");
+        System.out.println("5. Listado de estudiantes");
+    }
+   
     public static void crearCurso() {
         Scanner sc = new Scanner(System.in);
         Curso C = new Curso();
         while (true) {
             showMaterias();
-            System.out.println("Elija una materia del listado de materias: ");
+            System.out.println(">>Elija una materia del listado de materias: ");
             int num = sc.nextInt();
             sc.nextLine();
             switch (num) {
@@ -51,9 +70,10 @@ public class Planificador extends Persona {
                     System.out.println("Opción inválida, ingrese de nuevo: ");
                     break;
             }
-            System.out.println("\n");
-            showProfesores();
+            
+            //showProfesores();
             System.out.println("Elija un profesor del listado: ");
+            /*
             while (true) {
                 int eleccion = sc.nextInt();
                 if (eleccion <= (Academico_Hogwarts.profesores).size() && eleccion >= 0) {
@@ -74,14 +94,14 @@ public class Planificador extends Persona {
             System.out.println("Ingrese el horario del curso: ");
             String hora = sc.nextLine();
             C.setHorario(hora);
-            
+            */
         }
     }
 
     
 
     public static void showMaterias() {
-        System.out.println("/** MATERIAS **/\n");
+        System.out.println("\n/** MATERIAS **/");
         System.out.println("1. Pociones");
         System.out.println("2. Defensa contra las artes oscuras");
         System.out.println("3. Adivinación");
@@ -91,11 +111,11 @@ public class Planificador extends Persona {
         System.out.println("7. Encantamiento");
         System.out.println("8. Vuelo");
     }
-
+/*
     public static void showProfesores() {
         ArrayList<Profesor> profes = Academico_Hogwarts.profesores;
         if (profes != null) {
-            System.out.println("/** PROFESORES **/");
+            System.out.println("/** PROFESORES **//*");
             int i = 1;
             for (Profesor profe : profes) {
                 System.out.println(i + ". " + profe.getNombre() + " " + profe.getApellido());
@@ -105,6 +125,8 @@ public class Planificador extends Persona {
             System.out.println("No hay profesores todavía.");
         }
     }
+*/
+
     
 
 }

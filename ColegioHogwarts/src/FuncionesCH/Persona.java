@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package FuncionesCH;
-
-/**
- *
- * @author CLARO
- */
 
 public class Persona {
     private String nombre;
     private String apellido;
     private int edad;
     private String varita;
-    private Hechizero tipoMago;
+    private String tipoMago;
+    
+    public Persona(){
+        nombre = null;
+        apellido = null;
+        edad = 0;
+        varita = null;
+        tipoMago = null;
+    }
 
     public String getNombre() {
         return nombre;
@@ -49,11 +47,11 @@ public class Persona {
         this.varita = varita;
     }
 
-    public Hechizero getTipoMago() {
+    public String getTipoMago() {
         return tipoMago;
     }
 
-    public void setTipoMago(Hechizero tipoMago) {
+    public void setTipoMago(String tipoMago) {
         this.tipoMago = tipoMago;
     }
 }
