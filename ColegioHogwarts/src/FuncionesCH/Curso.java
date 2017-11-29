@@ -37,7 +37,7 @@ public class Curso {
             sc.nextLine();
             Materia M = null;
             while (true) {
-                if (existeCurso(num, AH) == false) {
+                if (existeCurso(num) == false) {    //hay que aclarar AH
                     switch (num) {
                         case (1):
                             M = Materia.POCIONES;
@@ -86,7 +86,7 @@ public class Curso {
                 + "7. Vuelo");
     }
     
-    private static boolean existeCurso(int num, Academico_Hogwarts AH) {
+    private static boolean existeCurso(int num) {
         Materia M = null;
         boolean valor= false;
         if (num <= 8 && num > 0) {
@@ -121,6 +121,7 @@ public class Curso {
                     break;
                 case (8):
                     M = Materia.VUELO;
+                    valor = true;
                     break;
             }
         }
