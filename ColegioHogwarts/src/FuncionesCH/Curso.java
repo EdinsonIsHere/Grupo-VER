@@ -86,7 +86,46 @@ public class Curso {
                 + "7. Vuelo");
     }
     
-    
+    private static boolean existeCurso(int num, Academico_Hogwarts AH) {
+        Materia M = null;
+        boolean valor= false;
+        if (num <= 8 && num > 0) {
+            switch (num) {
+                case (1):
+                    M = Materia.POCIONES;
+                    valor = true;
+                    break;
+                case (2):
+                    M = Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS;
+                    valor = true;
+                    break;
+                case (3):
+                    M = Materia.ADIVINACION;
+                    valor = true;
+                    break;
+                case (4):
+                    M = Materia.ASTRONOMIA;
+                    valor = true;
+                    break;
+                case (5):
+                    M = Materia.HISTORIA_DE_LA_MAGIA;
+                    valor = true;
+                    break;
+                case (6):
+                    M = Materia.HERBOLOGIA;
+                    valor = true;
+                    break;
+                case (7):
+                    M = Materia.ENCANTAMIENTO;
+                    valor = true;
+                    break;
+                case (8):
+                    M = Materia.VUELO;
+                    break;
+            }
+        }
+        return valor;
+    }
     
     public Materia getMateria() {
         return materia;
