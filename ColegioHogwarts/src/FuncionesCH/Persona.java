@@ -15,7 +15,19 @@ public class Persona {
     private String apellido;
     private int edad;
     private String varita;
+<<<<<<< HEAD
     private Hechizero tipoMago;
+=======
+    private String tipoMago;
+    
+    public Persona(){
+        nombre = null;
+        apellido = null;
+        edad = 0;
+        varita = null;
+        tipoMago = null;
+    }
+>>>>>>> parent of 102d73c... Merge branch 'master' of https://github.com/EdinsonIsHere/Grupo-VER
 
     public String getNombre() {
         return nombre;

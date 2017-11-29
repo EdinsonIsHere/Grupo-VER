@@ -5,10 +5,13 @@
  */
 package FuncionesCH;
 
+<<<<<<< HEAD
 /**
  *
  * @author CLARO
  */
+=======
+>>>>>>> parent of 102d73c... Merge branch 'master' of https://github.com/EdinsonIsHere/Grupo-VER
 public class Metamorfomago {
     
     private String pocion;

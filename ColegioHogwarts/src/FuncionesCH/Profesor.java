@@ -12,7 +12,10 @@ package FuncionesCH;
 public class Profesor extends Persona{
     
     private String fechaIngreso;
+<<<<<<< HEAD
     private String cosa;
+=======
+>>>>>>> parent of 102d73c... Merge branch 'master' of https://github.com/EdinsonIsHere/Grupo-VER
 
     public String getFechaIngreso() {
         return fechaIngreso;
