@@ -18,7 +18,8 @@ public class Planificador extends Persona {
         
         switch (opc) {
             case(1): 
-                //crearCurso();
+                Curso curso = new Curso ();
+                curso.CrearCurso();
                 break;
             case(2):
                 Profesor profe = new Profesor();
