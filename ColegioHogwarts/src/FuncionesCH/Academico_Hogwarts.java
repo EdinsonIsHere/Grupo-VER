@@ -12,15 +12,9 @@ import java.util.ArrayList;
  */
 public class Academico_Hogwarts {
     
-    private ArrayList<Estudiante> estudiantes;
-    private ArrayList<Curso> horarios;
-    private ArrayList<Profesor> profesores;
-
-    public Academico_Hogwarts() {
-        estudiantes = new ArrayList();
-        horarios = new ArrayList();
-        profesores = new ArrayList();
-    }
+    private static ArrayList<Estudiante> estudiantes;
+    private static ArrayList<Curso> horarios;
+    public static ArrayList<Profesor> profesores;
 
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
@@ -45,5 +39,7 @@ public class Academico_Hogwarts {
     public void setProfesores(ArrayList<Profesor> profesores) {
         this.profesores = profesores;
     }
+    
+    
     
 }

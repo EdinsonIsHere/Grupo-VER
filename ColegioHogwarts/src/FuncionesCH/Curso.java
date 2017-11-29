@@ -13,21 +13,12 @@ public class Curso {
     private Materia materia;
     private Profesor profesor;
     private int capacidad;
-    private Dia dia;
+    private String dia;
     private String horario;
-    private static int registrados = 0;
     
     public Curso(){
     }
 
-    public Curso(Materia materia, Profesor profesor, int capacidad, Dia dia, String horario) {
-        this.materia = materia;
-        this.profesor = profesor;
-        this.capacidad = capacidad;
-        this.dia = dia;
-        this.horario = horario;
-    }
-    
     public Materia getMateria() {
         return materia;
     }
@@ -52,11 +43,11 @@ public class Curso {
         this.capacidad = capacidad;
     }
 
-    public Dia getDia() {
+    public String getDia() {
         return dia;
     }
 
-    public void setDia(Dia dia) {
+    public void setDia(String dia) {
         this.dia = dia;
     }
 
@@ -66,14 +57,6 @@ public class Curso {
 
     public void setHorario(String horario) {
         this.horario = horario;
-    }
-
-    public static int getRegistrados() {
-        return registrados;
-    }
-
-    public static void setRegistrados(int registrados) {
-        Curso.registrados = registrados;
     }
     
 }

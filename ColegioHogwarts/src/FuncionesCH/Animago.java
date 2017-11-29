@@ -26,14 +26,4 @@ public class Animago extends Persona{
     public void setHechizo(String hechizo) {
         this.hechizo = hechizo;
     }
-    
-
-    public void despegar(){
-        System.out.println("¡El animago ha despegado!\n");
-    }
-    
-
-    public void volar(){
-        System.out.println("El animago puede volar con ayuda de su varita.\n");
-    }
 }

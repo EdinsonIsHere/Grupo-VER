@@ -15,14 +15,6 @@ public class Persona {
         tipoMago = null;
     }
 
-    public Persona(String nombre, String apellido, int edad, String varita, String tipoMago) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.varita = varita;
-        this.tipoMago = tipoMago;
-    }
-
     public String getNombre() {
         return nombre;
     }

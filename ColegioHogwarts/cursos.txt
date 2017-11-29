@@ -1,1 +1,0 @@
-materia,profesor,día,horario,capacidad
