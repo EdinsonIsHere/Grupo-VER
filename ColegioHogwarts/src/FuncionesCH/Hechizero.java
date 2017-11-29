@@ -9,14 +9,6 @@ package FuncionesCH;
  *
  * @author CLARO
  */
-public class Metamorfomago {
+public class Hechizero {
     
-    private String pocion;
-    
-    public String getPocion(){
-        return pocion;
-    }
-    public void setPocion(String pocion){
-        this.pocion = pocion;
-    }
 }
