@@ -18,12 +18,6 @@ public class Curso {
     private static int registrados = 0;
     
     public Curso(){
-        materia = null;
-        profesor = null;
-        capacidad = 0;
-        dia = null;
-        horario = null;
-        
     }
 
     public Curso(Materia materia, Profesor profesor, int capacidad, Dia dia, String horario) {
@@ -33,9 +27,6 @@ public class Curso {
         this.dia = dia;
         this.horario = horario;
     }
-    
-    
-    
     
     public Materia getMateria() {
         return materia;
