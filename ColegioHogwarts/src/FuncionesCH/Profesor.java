@@ -13,7 +13,8 @@ public class Profesor extends Persona{
         fechaIngreso = null;
     }
 
-    public Profesor(String fechaIngreso, String nombre, String apellido, int edad, String varita, String tipoMago) {
+    public Profesor(String fechaIngreso, String nombre, String apellido, 
+            int edad, String varita, String tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
         this.fechaIngreso = fechaIngreso;
     }
