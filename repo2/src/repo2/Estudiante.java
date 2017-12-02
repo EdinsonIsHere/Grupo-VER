@@ -5,6 +5,7 @@
  */
 package repo2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -81,7 +82,18 @@ public class Estudiante extends Mago {
                 
     }
     
-    
+    public void GuardarEstudiante(ArrayList<Estudiante> ListaEstudiantes,Estudiante estudiante){
+        //metodo para guardar, en caso de guardar se envia el estudiante a una lista donde luego
+        Scanner g=new Scanner(System.in);
+        System.out.println("Desea guardar los datos? S/N: ");
+        String guardar=g.nextLine();
+        if (guardar=="S"){
+            ListaEstudiantes.add(estudiante);
+            System.out.println("Datos del estudiante guardados");
+        }else
+            System.out.println("Datos eliminados.....");               
+           
+    }
     
     
     @Override
