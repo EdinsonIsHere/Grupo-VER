@@ -54,25 +54,28 @@ public class Estudiante extends Mago {
         //agregar el switch para los 3 tipos de mago
         if("1"==tipom){
             this.Tipo="Animago";
-            System.out.println("ingrese el animal de transformacion:");
+           //para los estudiantes no preciso de esta informacion
+            /*System.out.println("ingrese el animal de transformacion:");
             String cad5=sc.nextLine();
             this.animal=cad5;
             System.out.println("ingrese el hechizo de transformacion:");
             String cad6=sc.nextLine();
-            this.animal=cad6;
+            this.animal=cad6;*/
             
         }
         if("2"==tipom){
             this.Tipo="Metamorfomago";
-            System.out.println("ingrese pocion:");
+            //para los estudiantes no preciso de esta informacion
+            /*System.out.println("ingrese pocion:");
             String cad5=sc.nextLine();
-            this.pocion=cad5;    
+            this.pocion=cad5;*/    
         }
         if ("3"==tipom){
             this.Tipo="Normal";
-            System.out.println("ingrese deporte:");
+            //para los estudiantes no preciso de esta informacion
+            /*System.out.println("ingrese deporte:");
             String cad5=sc.nextLine();
-            this.deporte=cad5;
+            this.deporte=cad5;*/
             
         }
                 
