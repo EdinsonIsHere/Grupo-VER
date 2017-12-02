@@ -19,13 +19,30 @@ public class Estudiante extends Mago {
 
     @Override
     public void despegar() {
-        
-        
+        /*if(this.Tipo=="Animago"){
+              System.out.println("Usted es un mago Animago, Para volar necesita usar su varita.");   
+        }
+        if(this.Tipo=="Metamorfomago"){
+              System.out.println("Usted es un metamorfomago, Para volar necesita unicamente su poder.");        
+        }
+        if(this.Tipo=="Normal"){
+              System.out.println("Usted es un mago Normal, Para volar necesita una nimbus2000");
+
+        }*/
     }
 
     @Override
     public void volar() {
-         
-    }
+        if(this.Tipo=="Animago"){
+              System.out.println("Usted es un mago Animago, Para volar necesita usar su varita.");   
+        }
+        if(this.Tipo=="Metamorfomago"){
+              System.out.println("Usted es un metamorfomago, Para volar necesita unicamente su poder.");        
+        }
+        if(this.Tipo=="Normal"){
+              System.out.println("Usted es un mago Normal, Para volar necesita una nimbus2000");
+
+        }
     
+    }
 }
