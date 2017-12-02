@@ -1,0 +1,2 @@
+usuario,contraseña,nombres,apellidos,rol
+rogacaja,roga,rogwi,cajas,estudiante

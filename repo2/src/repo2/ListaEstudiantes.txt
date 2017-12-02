@@ -1,0 +1,2 @@
+nombres,apellidos,edad,varita,casa,tipo
+rogwi,cajas,20,cedro,ravenclaw,N

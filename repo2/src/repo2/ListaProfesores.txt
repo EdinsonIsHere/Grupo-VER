@@ -1,0 +1,2 @@
+nombres,apellidos,edad,varita,fechaIngreso,tipo,animal,hechizo,pocion,deporte
+rogwi,cajas,20,cedro,14/02/2001,normal,null,null,null,basketball

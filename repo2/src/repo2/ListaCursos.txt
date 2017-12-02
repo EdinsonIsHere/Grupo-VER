@@ -1,0 +1,2 @@
+materia,profesor,capacidad,horario
+Defensa contra las artes oscuras, severus snape,20,09:30-11-30
