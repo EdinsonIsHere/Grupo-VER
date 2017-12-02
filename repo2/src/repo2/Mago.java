@@ -4,20 +4,22 @@
  * and open the template in the editor.
  */
 package repo2;
-//sdasd
 
 /**
  *
  * @author cajas
  */
-public class Repo2 {
+public abstract class Mago implements Volador {
+    String Nombre;
+    String Apellido;
+    int Edad;
+    String Varita;
+    String Casa;
+    String Tipo;
 
-        public static void main(String[] args) {
-            //creo un objeto profesor
-            Profesor prof= new Profesor();
-            prof.CrearProfesor();
-            
-            
-    }
     
+   
+    
+    
+   
 }
