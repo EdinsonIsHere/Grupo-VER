@@ -53,9 +53,12 @@ public class Profesor extends Mago{
         String cadena2=sc.nextLine();
         this.Apellido=cadena2; 
         
-        System.out.println("ingrese la edad:");
+        System.out.println("ingrese la varita:");
         String cadena3=sc.nextLine();
         this.Varita=cadena3; 
+        System.out.println("Ingrese la edad: ");
+        int ed=sc.nextInt();
+        this.Edad=ed;
         
         System.out.println("ingrese la fecha de ingreso (dd/mm/aa=");
         String cadena4=sc.nextLine();

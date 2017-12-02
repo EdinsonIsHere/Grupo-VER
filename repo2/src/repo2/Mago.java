@@ -14,7 +14,6 @@ public abstract class Mago implements Volador {
     String Apellido;
     int Edad;
     String Varita;
-    String Casa;
     String Tipo;
 
     
