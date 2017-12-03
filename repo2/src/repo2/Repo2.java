@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package repo2;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -12,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Repo2 {
 
-        public static void main(String[] args) {
-            //creo un objeto profesory alumno
+        public static void main(String[] args) throws IOException {
+            /*creo un objeto profesor y alumno
             Estudiante est=new Estudiante();
             est.CrearEstudiante();
             Profesor prof= new Profesor();
@@ -22,7 +23,17 @@ public class Repo2 {
             ArrayList<Estudiante> ListaEstud=new ArrayList<>();
             ArrayList<Profesor> ListaProfesores=new ArrayList<>();
             prof.GuardarProfesor(ListaProfesores, prof);//añado prof a listaprofesores
-            est.GuardarEstudiante(ListaEstud, est);
+            est.GuardarEstudiante(ListaEstud, est);*/
+            //creo un objeto usuario
+            Usuario user=new Usuario();
+            String tipo=user.getTipoAcceso();
+            if(tipo.equalsIgnoreCase("planificador")){
+                System.out.println("/**BIENVENIDO: Planificador**/");
+                //corre menu planificador
+                
+            }else
+                System.out.println("/**BIENVENIDO: Estudiante**/");
+                
             
             
             

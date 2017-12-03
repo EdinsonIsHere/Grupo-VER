@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author cajas
  */
 public class Usuario {
-    public class Ingreso {
+    
     private String linea = null;
     private String usuario = null;
     private String contraseña = null;
@@ -25,7 +25,7 @@ public class Usuario {
     private String apellido;
    
     
-    public Ingreso() throws FileNotFoundException, IOException{
+    public Usuario() throws FileNotFoundException, IOException{
  
         
  
@@ -77,7 +77,7 @@ public class Usuario {
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-}
+
 //en la main, hacer un if con el tipoacceso para empezar como planificador o estudiante( usar getters para registro())
     
 }
