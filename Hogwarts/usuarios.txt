@@ -6,3 +6,8 @@ hapott,hapotter124,Harry,Potter,estudiante
 cocree,creevey23,Colin,Creevey,estudiante
 draquito,malfoy99,Draco,Malfoy,estudiante
 hermiGr,granger90,Hermione,Granger,estudiante
+adumb,adumb34,Albus,Dumbledore,planificador
+hapott,hapotter124,Harry,Potter,estudiante
+cocree,creevey23,Colin,Creevey,estudiante
+draquito,malfoy99,Draco,Malfoy,estudiante
+hermiGr,granger90,Hermione,Granger,estudiante
