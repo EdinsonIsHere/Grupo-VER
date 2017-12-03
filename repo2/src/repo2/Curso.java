@@ -18,7 +18,7 @@ public class Curso {
     int    Capacidad;//validar que nunca exceda
     String dia;//enum
     String Horario;//validar que no se repita
-    
+    int cupos;//inicia igual a capacidad, no se escribe en txt
     public void CrearCurso(){
         System.out.println("/** MATERIAS **/\n"
                 + "1.Pociones\n"
@@ -40,5 +40,8 @@ public class Curso {
             System.out.println("Datos del curso guardados ");
         }else
             System.out.println("Datos eliminados.....");  
+    }
+    public void EliminarCupo(){
+        this.cupos=cupos-1;
     }
 }
