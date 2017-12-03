@@ -13,8 +13,8 @@ public class Listas {
     public ArrayList<Curso> ListaHorarios=new ArrayList<>();
     //escribir los estudiantes en txt
     public void EscribirEstudiantes(){
-        
         //codigo receta para escribir en Estudiantes.txt
+        
         
     }
     public void EscribirProfesores(){
