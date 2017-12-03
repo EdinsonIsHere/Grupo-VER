@@ -1,2 +1,6 @@
 nombre,apellidos,edad,varita,casa,TipoMago
 
+Harry,Potter,16,espino,GRYFFINDOR,Animago
+Colin,Creevey,12,cedro,RAVENCLAW,Normal
+Draco,Malfoy,15,acebo,SLYTHERIN,Normal
+Hermione,Granger,14,manzano,GRYFFINDOR,Metamorfomago

@@ -1,1 +1,7 @@
 ﻿nombres,apellidos,edad,varita,fechaIngreso,tipoMago,animal,hechizo,pocion,deporte
+John,Carson,27,aliso,02/05/2017,Animago,perro,hechizo_1,null,null
+Steven,Rooney,31,cedro,01/05/2016,Normal,null,null,null,tenis
+Mac,Tyler,28,manzano,06/05/2013,Normal,null,null,null,soccer
+Donald,Perez,35,manzano,01/05/2011,Normal,null,null,null,basquet
+Abraham,Anderosn,33,cornejo,08/05/2014,Metamorfomago,null,null,poción de uva,null
+adalberto,veintimilla,23,sauco,02/02/2017,Metamorfomago,null,null,asdf,null
