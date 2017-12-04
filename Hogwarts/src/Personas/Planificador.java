@@ -161,7 +161,7 @@ public class Planificador extends Persona {
 
         System.out.print("Fecha de Ingreso: ");
         String fechaIn = sc.nextLine();
-
+        
         Hechizero H = Mostrar.elegirTipoMago();
 
         System.out.println("\n¿Desea guardar los datos? S/N: ");
