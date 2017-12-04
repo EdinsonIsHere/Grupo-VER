@@ -23,10 +23,10 @@ public class Planificador extends Persona {
      * @param varita nombre de la varita
      * @param tipoMago nombre del tipo de mago
      */
-    public Planificador(String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+    public Planificador(String nombre, String apellido, int edad, String varita, Hechicero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
     }
-
+    
     /**
      * Este método permite crear cursos
      * @param AH objeto académico Hogwarts
@@ -39,42 +39,47 @@ public class Planificador extends Persona {
 
             Materia M = null;
             while (true) {
-                int num = sc.nextInt();
-                sc.nextLine();
-                if (num <= 8 && num > 0) {
-                    if (Mostrar.existeCurso(num,AH) == false) {
-                        switch (num) {
-                            case (1):
-                                M = Materia.POCIONES;
-                                break;
-                            case (2):
-                                M = Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS;
-                                break;
-                            case (3):
-                                M = Materia.ADIVINACION;
-                                break;
-                            case (4):
-                                M = Materia.ASTRONOMIA;
-                                break;
-                            case (5):
-                                M = Materia.HISTORIA_DE_LA_MAGIA;
-                                break;
-                            case (6):
-                                M = Materia.HERBOLOGIA;
-                                break;
-                            case (7):
-                                M = Materia.ENCANTAMIENTO;
-                                break;
-                            case (8):
-                                M = Materia.VUELO;
-                                break;
+                try {
+                    int num = sc.nextInt();
+                    sc.nextLine();
+                    if (num <= 8 && num > 0) {
+                        if (Mostrar.existeCurso(num, AH) == false) {
+                            switch (num) {
+                                case (1):
+                                    M = Materia.POCIONES;
+                                    break;
+                                case (2):
+                                    M = Materia.DEFENSA_CONTRA_LAS_ARTES_OSCURAS;
+                                    break;
+                                case (3):
+                                    M = Materia.ADIVINACION;
+                                    break;
+                                case (4):
+                                    M = Materia.ASTRONOMIA;
+                                    break;
+                                case (5):
+                                    M = Materia.HISTORIA_DE_LA_MAGIA;
+                                    break;
+                                case (6):
+                                    M = Materia.HERBOLOGIA;
+                                    break;
+                                case (7):
+                                    M = Materia.ENCANTAMIENTO;
+                                    break;
+                                case (8):
+                                    M = Materia.VUELO;
+                                    break;
+                            }
+                            break;
+                        } else {
+                            System.out.print("¡El curso ya existe!, ingrese otro: ");
                         }
-                        break;
                     } else {
-                        System.out.println("¡El curso ya existe!, ingrese otro: ");
+                        System.out.print("Opción inválida, ingrese de nuevo: ");
                     }
-                }else{
-                    System.out.print("Opción inválida, ingrese de nuevo: ");
+                } catch (Exception e) {
+                    sc.nextLine();
+                    System.out.print("Ingreso inválido, intente otra vez: ");
                 }
             }
 
@@ -83,17 +88,32 @@ public class Planificador extends Persona {
             System.out.println("Elija un profesor del listado: ");
             Profesor P;
             while (true) {
-                int eleccion = sc.nextInt();
-                if (eleccion <= (AH.getProfesores()).size() && eleccion >= 0) {
-                    P = AH.getProfesores().get(eleccion - 1);
-                    break;
-                } else {
-                    System.out.println("La opción es inválida, ingrese de nuevo: ");
+                try {
+                    int eleccion = sc.nextInt();
+                    sc.nextLine();
+                    if (eleccion <= (AH.getProfesores()).size() && eleccion >= 0) {
+                        P = AH.getProfesores().get(eleccion - 1);
+                        break;
+                    } else {
+                        System.out.println("La opción es inválida, ingrese de nuevo: ");
+                    }
+                } catch (Exception e) {
+                    sc.nextLine();
+                    System.out.println("Ingreso inválido, intente otra vez:");
                 }
             }
             System.out.print("\nIngrese la capacidad del curso para " + M.toString() + ": ");
-            int cap = sc.nextInt();
-            sc.nextLine();
+            int cap;
+            while (true) {
+                try {
+                    cap = sc.nextInt();
+                    sc.nextLine();
+                    break;
+                } catch (Exception e) {
+                    sc.nextLine();
+                    System.out.print("Se espera un número: ");
+                }
+            }
 
             Dia d = Mostrar.elegirDia();
 
@@ -120,7 +140,7 @@ public class Planificador extends Persona {
 
         }
     }
-
+    
     /**
      * Este método  permite añadir al archivo cursos.txt sus respectivos datos
      * @param curso objeto curso
@@ -137,9 +157,9 @@ public class Planificador extends Persona {
             outputStream.close();
         }
     }
-
+    
     /**
-     * Este método registra los datos del profesor
+     * Este método crea un profesor y lo añade a un ArrayList de tipo Profesor
      * @param profes lista profesor
      */
     public void crearProfesor(ArrayList<Profesor> profes) {
@@ -153,16 +173,26 @@ public class Planificador extends Persona {
         String apellidos = sc.nextLine();
 
         System.out.print("Ingrese Edad: ");
-        int edad = sc.nextInt();
-        sc.nextLine();
+        
+        int edad;
+        while (true) {
+            try {
+                edad = sc.nextInt();
+                sc.nextLine();
+                break;
+            } catch (Exception e) {
+                sc.nextLine();
+                System.out.print("Se espera una cantidad numérica: ");
+            }
+        }
 
         System.out.print("Varita: ");
         String varita = sc.nextLine();
 
         System.out.print("Fecha de Ingreso: ");
         String fechaIn = sc.nextLine();
-        
-        Hechizero H = Mostrar.elegirTipoMago();
+
+        Hechicero H = Mostrar.elegirTipoMago();
 
         System.out.println("\n¿Desea guardar los datos? S/N: ");
         String conf = sc.nextLine();
@@ -178,7 +208,7 @@ public class Planificador extends Persona {
         }
 
     }
-
+    
     /**
      * Este método  permite añadir al archivo profesores.txt sus respectivos datos
      * @param P objeto profesor
@@ -187,7 +217,7 @@ public class Planificador extends Persona {
         PrintWriter outputStream = null;
         try {
             outputStream = new PrintWriter(new FileOutputStream("..\\Hogwarts\\profesores.txt", true));
-            Hechizero H = P.getTipoMago();
+            Hechicero H = P.getTipoMago();
             if (H instanceof Animago) {
                 outputStream.println(P.getNombre() + "," + P.getApellido() + "," + P.getEdad() + "," + P.getVarita() + "," + P.getFechaIngreso() + ",Animago," + ((Animago) H).getAnimal() + "," + ((Animago) H).getHechizo() + ",null,null");
             } else if (H instanceof Metamorfomago) {
@@ -204,9 +234,9 @@ public class Planificador extends Persona {
         }
 
     }
-
+    
     /**
-     * Este método permite ingresar los datos una lista de estudiantes
+     * Este método permite crear un estudiante y añadirlo a un ArrayList de tipo Estudiante
      * @param estudiantes lista de estudiantes
      * @param users lista de usuarios
      */
@@ -221,15 +251,25 @@ public class Planificador extends Persona {
         String apellidos = sc.nextLine();
 
         System.out.print("Ingrese Edad: ");
-        int edad = sc.nextInt();
-        sc.nextLine();
+        
+        int edad;
+        while (true) {
+            try {
+                edad = sc.nextInt();
+                sc.nextLine();
+                break;
+            } catch (Exception e) {
+                sc.nextLine();
+                System.out.print("Se espera una cantidad numérica: ");
+            }
+        }
 
         System.out.print("Varita: ");
         String varita = sc.nextLine();
 
         Casa c = Mostrar.elegirCasa();
 
-        Hechizero H = Mostrar.elegirTipoMago();
+        Hechicero H = Mostrar.elegirTipoMago();
 
         System.out.print("\n¿Desea guardar los datos? S/N : ");
 
@@ -253,7 +293,7 @@ public class Planificador extends Persona {
         }
 
     }
-
+    
     /**
      * Este método  permite añadir al archivo estudiantes.txt sus respectivos datos
      * @param e objeto estudiante
@@ -277,9 +317,9 @@ public class Planificador extends Persona {
             outputStream.close();
         }
     }
-
+    
     /**
-     * Este método permite si hay cursos creados
+     * Este método le permite ver al objeto Planificador los cursos creados
      * @param cursos lista de cursos
      */
     public void verHorarios(ArrayList<Curso> cursos) {
@@ -292,51 +332,64 @@ public class Planificador extends Persona {
                 i++;
             }
             System.out.println("Elija una materia del listado de materias: ");
-            int num = sc.nextInt();
-            sc.nextLine();
-            Curso curso = cursos.get(num - 1);
 
-            System.out.println("MATERIA: " + curso.getMateria());
-            System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre() + " " + (curso.getProfesor()).getApellido());
-            System.out.println("HORARIO: " + curso.getDia() + ", " + curso.getHorario());
-            System.out.println("REGISTRADOS: " + curso.getRegistrados());
+            while (true) {
+                try {
+                    int num = sc.nextInt();
+                    sc.nextLine();
+                    Curso curso = cursos.get(num - 1);
 
+                    System.out.println("MATERIA: " + curso.getMateria());
+                    System.out.println("PROFESOR: " + (curso.getProfesor()).getNombre() + " " + (curso.getProfesor()).getApellido());
+                    System.out.println("HORARIO: " + curso.getDia() + ", " + curso.getHorario());
+                    System.out.println("REGISTRADOS: " + curso.getRegistrados());
+                    break;
+                } catch (Exception e) {
+                    sc.nextLine();
+                    System.out.print("Opción inválida, intente otra vez: ");
+                }
+            }
         } else {
             System.out.println("\n¡Aún no hay cursos creados!\n");
         }
 
     }
-
+    
     /**
-     * Este método  permite elegir el criterio para ordenar la lista de estudiantes
+     * Este método permite ver los estudiantes de Hogwarts y ordenarlos por un criterio 
      * @param estudiantes lista de estudiantes
      */
     public void verListadoEstudiantes(ArrayList<Estudiante> estudiantes) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("/** LISTADO DE ESTUDIANTES **/");
+        System.out.println("\n/** LISTADO DE ESTUDIANTES **/");
         System.out.println("1. Nombre");
         System.out.println("2. Edad");
         System.out.println("3. Número de materias registradas");
         System.out.println("Elija el criterio para ordenar: ");
         while (true) {
-            int num = sc.nextInt();
-            sc.nextLine();
-            if (num <= 3 && num > 0) {
-                if (num == 1) {
-                    Collections.sort(estudiantes);
-                    Mostrar.showListado(estudiantes);
-                    break;
-                } else if (num == 2) {
-                    Collections.sort(estudiantes, new PorEdad());
-                    Mostrar.showListado(estudiantes);
-                    break;
-                } else if (num == 3) {
-                    Collections.sort(estudiantes, new PorMatReg());
-                    Mostrar.showListado(estudiantes);
-                    break;
+            try {
+                int num = sc.nextInt();
+                sc.nextLine();
+                if (num <= 3 && num > 0) {
+                    if (num == 1) {
+                        Collections.sort(estudiantes);
+                        Mostrar.showListado(estudiantes);
+                        break;
+                    } else if (num == 2) {
+                        Collections.sort(estudiantes, new PorEdad());
+                        Mostrar.showListado(estudiantes);
+                        break;
+                    } else if (num == 3) {
+                        Collections.sort(estudiantes, new PorMatReg());
+                        Mostrar.showListado(estudiantes);
+                        break;
+                    }
+                } else {
+                    System.out.println("Dicha opción no existe, elija de nuevo:");
                 }
-            } else {
-                System.out.println("Dicha opción no existe, elija de nuevo:");
+            } catch (Exception e) {
+                sc.nextLine();
+                System.out.println("¡Ingreso inválido!");
             }
         }
 

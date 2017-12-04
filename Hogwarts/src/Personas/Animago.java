@@ -1,10 +1,9 @@
-
 package Personas;
 
 /**
  *Esta clase permite crear los detalles de un animago
  */
-public class Animago extends Hechizero{
+public class Animago extends Hechicero{
     private String animal;
     private String hechizo;
     
@@ -17,7 +16,7 @@ public class Animago extends Hechizero{
         this.animal=animal;
         this.hechizo=hechizo;
     }
-
+    
     /**
      * Este método devuelve el nombre del animal
      * @return retorna el nombre dle animal
@@ -25,7 +24,7 @@ public class Animago extends Hechizero{
     public String getAnimal() {
         return animal;
     }
-
+    
     /**
      * Este método modifica el nombre del animal
      * @param animal nombre del animal
@@ -33,7 +32,7 @@ public class Animago extends Hechizero{
     public void setAnimal(String animal) {
         this.animal = animal;
     }
-
+    
     /**
      * Este método devuelve el hechizo
      * @return retorna el hechizo
@@ -41,7 +40,7 @@ public class Animago extends Hechizero{
     public String getHechizo() {
         return hechizo;
     }
-
+    
     /**
      * Este método modifica el hechizo
      * @param hechizo hechizo
@@ -51,7 +50,7 @@ public class Animago extends Hechizero{
     }
     
     /**
-     * EEste método es implementado de la clase hechicero
+     * Este método es implementado de la interfaz Volador
      */
     @Override
     public void despegar(){
@@ -59,7 +58,7 @@ public class Animago extends Hechizero{
     }
     
     /**
-     * Este método es implementado de la clase hechicero
+     * Este método es implementado de la interfaz Volador
      */
     @Override
     public void volar(){

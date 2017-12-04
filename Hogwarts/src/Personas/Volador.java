@@ -1,9 +1,9 @@
 package Personas;
 
-/**
- *La interfaz volar tiene dos métodos que es despegar y volar
- */
 
+/**
+ *La interfaz Volador tiene dos métodos que es despegar y volar
+ */
 public interface Volador {
     
     /**
@@ -12,7 +12,7 @@ public interface Volador {
     public void despegar();
     
     /**
-     * Este método es implentado por otras clases para saber si vuela
+     * Este método es implentado por otras clases para saber como vuela
      */
     public void volar();
 }

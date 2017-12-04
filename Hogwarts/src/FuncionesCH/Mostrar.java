@@ -1,7 +1,7 @@
 
 package FuncionesCH;
 
-import Personas.Hechizero;
+import Personas.Hechicero;
 import Personas.Animago;
 import Personas.Estudiante;
 import Personas.Metamorfomago;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  *Esta clase permite mostrar los distintos menú de opciones
  */
 public class Mostrar {
-
+    
     /**
      * Este método muestra las opciones de planificador
      */
@@ -27,7 +27,7 @@ public class Mostrar {
         System.out.println("5. Listado de Estudiantes");
         System.out.println("6. Cerrar sesión");
     }
-
+    
     /**
      * Este método muestra las opciones del estudiante
      */
@@ -38,7 +38,7 @@ public class Mostrar {
         System.out.println("3. Descripción de Vuelo");
         System.out.println("4. Cerrar sesión");
     }
-
+    
     /**
      * Este método muestra las opciones de las materias
      */
@@ -63,12 +63,12 @@ public class Mostrar {
         System.out.println("2.Metamorfomago");
         System.out.println("3.Estandar");
     }
-
+    
     /**
      * Este método permite elegir el tipo de mago
      * @return retorna un objeto hechicero
      */
-    public static Hechizero elegirTipoMago() {
+    public static Hechicero elegirTipoMago() {
         Scanner sc = new Scanner(System.in);
         showTiposMagos();
         System.out.print("Elija el tipo de mago/bruja que es:");
@@ -76,7 +76,7 @@ public class Mostrar {
             int tipo = sc.nextInt();
             sc.nextLine();
             String animal, hechizo, pocion, deporte;
-            Hechizero H;
+            Hechicero H;
             switch (tipo) {
                 case (1):
                     System.out.println("\n¿En qúe clase de animal puede convertirse?: ");
@@ -100,7 +100,7 @@ public class Mostrar {
             }
         }
     }
-
+    
     /**
      * Este método muestra la lista de estudiantes
      * @param ests lista de estudiantes
@@ -110,7 +110,7 @@ public class Mostrar {
             System.out.println(e.toString());
         }
     }
-
+    
     /**
      * Este método designa la casa
      * @return retorna un objeto casa
@@ -139,7 +139,7 @@ public class Mostrar {
             }
         }
     }
-
+    
     /**
      * Este método define el dia
      * @return retorna un objeto dia
@@ -176,7 +176,7 @@ public class Mostrar {
             }
         }
     }
-
+    
     /**
      * Este método muestra la existencia de profesores
      * @param AH  objeto de académico hogwarts
@@ -194,9 +194,9 @@ public class Mostrar {
             System.out.println("No hay profesores todavía.");
         }
     }
-
+    
     /**
-     * Este método devuelve el valor de la existencia del curso
+     * Este método determina la existencia de un curso
      * @param num numero de la opcion de las materias
      * @param AH objeto académico hogwarts
      * @return retorna el valor de la existencia de curso

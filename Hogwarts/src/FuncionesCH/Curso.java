@@ -1,10 +1,9 @@
-
 package FuncionesCH;
 
 import Personas.Profesor;
 
 /**
- * Esta clase te permite guardas los datos del curso
+ * Esta clase permite guardar los datos del curso
  */
 public class Curso {
     private Materia materia;
@@ -19,14 +18,14 @@ public class Curso {
      */
     public Curso(){
     }
-
+    
     /**
      * Este método permite ingresar los datos del cuso por medio de parámetros
      * @param materia nombre de la materia
      * @param profesor nombre del profesor
      * @param capacidad numero de la capacidad del curso
-     * @param dia dia de la curso
-     * @param horario horarios de la curso
+     * @param dia dia del curso
+     * @param horario horarios del curso
      */
     public Curso(Materia materia, Profesor profesor, int capacidad, Dia dia, String horario) {
         this.materia = materia;
@@ -52,7 +51,7 @@ public class Curso {
     public void setMateria(Materia materia) {
         this.materia = materia;
     }
-
+    
     /**
      * Este método devuelve el objeto del profesor
      * @return retorna el objeto profesor
@@ -60,7 +59,7 @@ public class Curso {
     public Profesor getProfesor() {
         return profesor;
     }
-
+    
     /**
      * Este método modifica el objeto profesor
      * @param profesor retorna el objeto profesor
@@ -68,7 +67,7 @@ public class Curso {
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
     }
-
+    
     /**
      * Este método devuelve el número de la capacidad del curso
      * @return retorna la capacidad del cutso
@@ -76,7 +75,7 @@ public class Curso {
     public int getCapacidad() {
         return capacidad;
     }
-
+    
     /**
      * Este método modifica la capacidad del curso
      * @param capacidad número de la capacidad del curso
@@ -84,7 +83,7 @@ public class Curso {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
-
+    
     /**
      * Este método devuelve el objeto día
      * @return retorna el objeto día
@@ -92,7 +91,7 @@ public class Curso {
     public Dia getDia() {
         return dia;
     }
-
+    
     /**
      * Este método modifica el objeto día
      * @param dia retorna el objeto día
@@ -100,7 +99,7 @@ public class Curso {
     public void setDia(Dia dia) {
         this.dia = dia;
     }
-
+    
     /**
      * Este método devuelve el horario del curso
      * @return retorna el horario del curso
@@ -108,7 +107,7 @@ public class Curso {
     public String getHorario() {
         return horario;
     }
-
+    
     /**
      * Este método modifica el horario del curso
      * @param horario  horario del curso
@@ -116,7 +115,7 @@ public class Curso {
     public void setHorario(String horario) {
         this.horario = horario;
     }
-
+    
     /**
      * Este método devuelve el número de registrados
      * @return retorna el número de registrados
@@ -124,7 +123,7 @@ public class Curso {
     public int getRegistrados() {
         return registrados;
     }
-
+    
     /**
      * Este método modifica el numero de registrados
      * @param registrados número de registrados

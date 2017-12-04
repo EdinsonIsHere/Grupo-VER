@@ -1,4 +1,3 @@
-
 package Personas;
 
 /**
@@ -8,7 +7,7 @@ public class Profesor extends Persona{
     
     private String fechaIngreso;
     private String cosa;
-
+    
     /**
      * Este método define al profesor por medio de parámetros
      * @param fechaIngreso fecha de ingreso
@@ -18,7 +17,7 @@ public class Profesor extends Persona{
      * @param varita nombre de la varita del profesor
      * @param tipoMago  tipo de mago que es el profesor
      */
-    public Profesor(String fechaIngreso, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+    public Profesor(String fechaIngreso, String nombre, String apellido, int edad, String varita, Hechicero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
         this.fechaIngreso = fechaIngreso;
     }
@@ -30,7 +29,7 @@ public class Profesor extends Persona{
     public String getFechaIngreso() {
         return fechaIngreso;
     }
-
+    
     /**
      * Este método modifica la fecha de ingreso
      * @param fechaIngreso fecha de ingreso

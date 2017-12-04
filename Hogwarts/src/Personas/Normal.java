@@ -1,10 +1,9 @@
-
 package Personas;
 
 /**
  *Esta clase permite definir los detalles de un mago normal
  */
-public class Normal extends Hechizero{
+public class Normal extends Hechicero{
     private String deporte;
 
     /**
@@ -14,7 +13,7 @@ public class Normal extends Hechizero{
     public Normal(String deporte) {
         this.deporte = deporte;
     }
-
+    
     /**
      * Este método devuelve el nombre del deporte
      * @return retorna el deporte
@@ -32,7 +31,7 @@ public class Normal extends Hechizero{
     }
     
     /**
-     * Este método  muestra si ha despegado
+     * Este método muestra el despegue
      */
     @Override
     public void despegar(){
@@ -40,7 +39,7 @@ public class Normal extends Hechizero{
     }
     
     /**
-     * Este método  muestra como puede volar
+     * Este método muestra la descripción de vuelo del Mago Normal
      */
     @Override
     public void volar(){

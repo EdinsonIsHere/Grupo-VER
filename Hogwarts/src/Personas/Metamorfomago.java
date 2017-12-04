@@ -1,13 +1,12 @@
-
 package Personas;
 
 /**
  *Esta clase permite definir los detalles del metamorfomago
  */
-public class Metamorfomago extends Hechizero{
+public class Metamorfomago extends Hechicero{
     
     private String pocion;
-
+    
     /**
      * Este método define el valor de poción a partir de un parámetro
      * @param pocion nombre de la poción
@@ -33,7 +32,7 @@ public class Metamorfomago extends Hechizero{
     }
     
     /**
-     * Este método muestra si ha despegado
+     * Este método muestra el despegue
      */
     @Override
     public void despegar(){
@@ -41,7 +40,7 @@ public class Metamorfomago extends Hechizero{
     }
     
     /**
-     * Este método muestra como puede volar
+     * Este método muestra la descripción de vuelo del Metamorfomago
      */
     @Override
     public void volar(){

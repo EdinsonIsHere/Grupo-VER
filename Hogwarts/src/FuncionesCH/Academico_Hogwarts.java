@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Esta clase permite enlistar estudiantes, horarios, profesores y usuarios
+ * Esta clase contiene el listado de estudiantes, horarios, profesores y usuarios
  */
 
 public class Academico_Hogwarts {
@@ -18,7 +18,7 @@ public class Academico_Hogwarts {
     private ArrayList<Curso> horarios;
     private ArrayList<Profesor> profesores;
     private ArrayList<Usuario> usuarios;
-
+    
     /**
      * Este método permite crear una lista de estudiantes, horarios, profesores y usuarios
      */
@@ -29,14 +29,11 @@ public class Academico_Hogwarts {
         usuarios = new ArrayList();
     }
 
-    //Para una rápida prueba del funcionamiento del programa, se creara un método que inicialice
-    //los atributos con un planificador, 3 cursos, 4 estudiantes y 5 profesores.
-
     /**
      * Este método inicia el sistema con valores de prueba que son:
      * Creación de una lista de profesores, de cursos, de horarios, de estudiantes, 
      * de usuarios.
-     * Se a$ade respectivamente al archivo usuarios.txt, contraseñas.txt y profesores.txt. 
+     * Se agrega respectivamente al archivo usuarios.txt, horarios.txt, profesores.txt y estudiantes.txt 
      */
     public void iniciarSistema() {
         Planificador Planif = new Planificador("Albus","Dumbledore",45,"roble", new Normal("golf"));
@@ -88,7 +85,7 @@ public class Academico_Hogwarts {
         Planificador.addEstudiantesTXT(E4);
 
     }
-
+    
     /**
      * Este método comprueba el acceso al sistema
      * @param usuario nombre del usuario
@@ -133,7 +130,7 @@ public class Academico_Hogwarts {
         }
         return P;
     }
-
+    
     /**
      * Este método devuelve una lista de estudiantes
      * @return retorna lista de estudiantes
@@ -141,7 +138,7 @@ public class Academico_Hogwarts {
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }
-
+    
     /**
      * Este método modifica la lista de estudiante
      * @param estudiantes retorna la lista de estudiantes
@@ -149,7 +146,7 @@ public class Academico_Hogwarts {
     public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }
-
+    
     /**
      * Este método devuelve la lista de horarios
      * @return retorna la lista de horarios
@@ -157,7 +154,7 @@ public class Academico_Hogwarts {
     public ArrayList<Curso> getHorarios() {
         return horarios;
     }
-
+    
     /**
      * Este método modifica la lista de horarios
      * @param horarios lista de horarios
@@ -165,7 +162,7 @@ public class Academico_Hogwarts {
     public void setHorarios(ArrayList<Curso> horarios) {
         this.horarios = horarios;
     }
-
+    
     /**
      * Este método devuelve la lista de profesores
      * @return retorna la lista de profesores
@@ -173,7 +170,7 @@ public class Academico_Hogwarts {
     public ArrayList<Profesor> getProfesores() {
         return profesores;
     }
-
+    
     /**
      * Este método modifica la lista de profesores
      * @param profesores lista de profesores
@@ -181,7 +178,7 @@ public class Academico_Hogwarts {
     public void setProfesores(ArrayList<Profesor> profesores) {
         this.profesores = profesores;
     }
-
+    
     /**
      * Este método devuelve la lista de usuarios
      * @return retorna la lista de usuarios
@@ -189,7 +186,7 @@ public class Academico_Hogwarts {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
-
+    
     /**
      *Este método modifica la lista de usuarios 
      * @param usuarios retorna la lista de usuarios

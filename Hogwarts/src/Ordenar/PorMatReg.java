@@ -1,10 +1,9 @@
-
 package Ordenar;
 import java.util.Comparator;
 import Personas.Estudiante;
 
 /**
- *Este clase ordena los estudiantes por materia
+ *Este clase ordena los estudiantes por número de materias registradas
  */
 public class PorMatReg implements Comparator<Estudiante> {
     

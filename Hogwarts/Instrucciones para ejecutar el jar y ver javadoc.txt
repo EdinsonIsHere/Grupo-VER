@@ -1,0 +1,7 @@
+>>Para ejecutar el jar.
+1. Doble clic en Ejecutar Hogwarts
+
+>>Para ver javadoc.
+1. Abra la carpeta dist
+2. Abra la carpeta javadoc
+3. Doble clic en index.html

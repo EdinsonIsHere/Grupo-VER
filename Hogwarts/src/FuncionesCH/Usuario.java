@@ -1,5 +1,4 @@
 package FuncionesCH;
-
 import Personas.*;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -13,20 +12,21 @@ public class Usuario {
     private String contraseña;
     private Persona persona;
     private String rol;
-/**
- * Este método permite crear un usuario con parámetros
- * @param user nombre del uuario
- * @param contraseña contraseña del usuario
- * @param persona objeto persona
- * @param rol nombre del rol del usuario
- */
+    
+    /**
+     * Este método permite crear un usuario con parámetros
+     * @param user nombre del uuario
+     * @param contraseña contraseña del usuario
+     * @param persona objeto persona
+     * @param rol nombre del rol del usuario
+     */
     public Usuario(String user, String contraseña, Persona persona, String rol) {
         this.user = user;
         this.contraseña = contraseña;
         this.persona = persona;
         this.rol = rol;
     }
-
+    
     /**
      * Este método devuelve el usuario
      * @return retorna el nombre del usuario
@@ -34,7 +34,7 @@ public class Usuario {
     public String getUser() {
         return user;
     }
-
+    
     /**
      * Este metodo modifica el nombre del usuario
      * @param user nombre del usuario
@@ -42,7 +42,7 @@ public class Usuario {
     public void setUser(String user) {
         this.user = user;
     }
-
+    
     /**
      * Este metodo devuelve la contraseña
      * @return retorna la contraseña
@@ -50,7 +50,7 @@ public class Usuario {
     public String getContraseña() {
         return contraseña;
     }
-
+    
     /**
      * Este metodo modifica la contraseña
      * @param contraseña contraseña del usuario
@@ -58,7 +58,7 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-
+    
     /**
      * Este método devuelve el objeto persona
      * @return retorna el objeto persona
@@ -66,7 +66,7 @@ public class Usuario {
     public Persona getPersona() {
         return persona;
     }
-
+    
     /**
      * Este método modifica el objeto persona
      * @param persona objeto persona
@@ -74,7 +74,7 @@ public class Usuario {
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-
+    
     /**
      * Este método devuelve el rol del usuario
      * @return retorna el rol del usuario

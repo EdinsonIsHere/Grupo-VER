@@ -1,4 +1,3 @@
-
 package Personas;
 
 import FuncionesCH.Casa;
@@ -30,12 +29,12 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
      * @param varita nombre de la varita del estudiante
      * @param tipoMago  tipo de mago que es el estudiante
      */
-    public Estudiante(Casa casa, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
+    public Estudiante(Casa casa, String nombre, String apellido, int edad, String varita, Hechicero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
         this.casa = casa;
         this.materiasReg = 0;
     }
-
+    
     /**
      * Este método devuelve el objeto casa
      * @return retorna el objeto casa
@@ -43,7 +42,7 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
     public Casa getCasa() {
         return casa;
     }
-
+    
     /**
      * Este método modifica el objeto casa
      * @param casa  objeto casa
@@ -51,7 +50,7 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
     public void setCasa(Casa casa) {
         this.casa = casa;
     }
-
+    
     /**
      * Este método devuelve el número de materias en que se ha registrado
      * @return retorna el número de materias
@@ -59,14 +58,14 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
     public int getMateriasReg() {
         return materiasReg;
     }
-
+    
     /**
-     * Este método incrementa el número de materias
+     * Este método incrementa el número de materias registradas
      */
     public void incrementar() {
         materiasReg = materiasReg + 1;
     }
-
+    
     /**
      * Este método convierte a string los datos del estudiantes
      * @return retorna los datos del estudiante como frase
@@ -76,7 +75,7 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         String frase = getNombre() + " " + getApellido() + "  --  " + getEdad() + " años  --  " + getCasa() + "  --  " + getMateriasReg() + " materia(s)";
         return frase;
     }
-
+    
     /**
      * Este método compara estudiante en orden lexicográfico
      * @param e estudiante
@@ -90,9 +89,9 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
             return this.getNombre().compareTo(e.getNombre());
         }
     }
-
+    
     /**
-     * Este método retorna el horario a partir del curso
+     * Este método le permite ver al estudiante los cursos planificados
      * @param cursos lista de cursos
      */
     public void verHorarios(ArrayList<Curso> cursos) {
@@ -118,9 +117,9 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         }
 
     }
-
+    
     /**
-     * Este método permite registrar los cursos
+     * Este método le permite al estudiante registrarse en un curso
      * @param cursos lista de cursos
      */
     public void registrar(ArrayList<Curso> cursos) {
@@ -164,7 +163,7 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         }
 
     }
-
+    
     /**
      * Este método permite añadir al archivo registro.txt sus respectivos datos
      * @param nombre nombre
@@ -190,7 +189,7 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         }
 
     }
-
+    
     /**
      * Este método muestra si hay cursos creados
      * @param cursos lista de cursos
@@ -207,11 +206,12 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
             System.out.println("¡Aún no hay cursos creados!");
         }
     }
-
+    
     /**
-     * Este método muestra el valor de volar
+     * Este método muestra la descripción de vuelo del estudiante
      */
     public void showVuelo() {
         (this.getTipoMago()).volar();
     }
+    
 }
