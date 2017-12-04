@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package FuncionesCH;
 
 import Personas.*;
@@ -14,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
- * @author CLARO
+ * Esta clase permite enlistar estudiantes, horarios, profesores y usuarios
  */
+
 public class Academico_Hogwarts {
 
     private ArrayList<Estudiante> estudiantes;
@@ -24,6 +19,9 @@ public class Academico_Hogwarts {
     private ArrayList<Profesor> profesores;
     private ArrayList<Usuario> usuarios;
 
+    /**
+     * Este método permite crear una lista de estudiantes, horarios, profesores y usuarios
+     */
     public Academico_Hogwarts() {
         estudiantes = new ArrayList();
         horarios = new ArrayList();
@@ -33,6 +31,13 @@ public class Academico_Hogwarts {
 
     //Para una rápida prueba del funcionamiento del programa, se creara un método que inicialice
     //los atributos con un planificador, 3 cursos, 4 estudiantes y 5 profesores.
+
+    /**
+     * Este método inicia el sistema con valores de prueba que son:
+     * Creación de una lista de profesores, de cursos, de horarios, de estudiantes, 
+     * de usuarios.
+     * Se a$ade respectivamente al archivo usuarios.txt, contraseñas.txt y profesores.txt. 
+     */
     public void iniciarSistema() {
         Planificador Planif = new Planificador("Albus","Dumbledore",45,"roble", new Normal("golf"));
         Usuario UP = new Usuario("adumb","adumb34",Planif,"planificador");
@@ -84,6 +89,15 @@ public class Academico_Hogwarts {
 
     }
 
+    /**
+     * Este método comprueba el acceso al sistema
+     * @param usuario nombre del usuario
+     * @param contraseña contraseña del ususario
+     * @param usuarios lista de usuarios
+     * @return retorna el objero persona
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
     public Persona ingresarSistema(String usuario, String contraseña, ArrayList<Usuario> usuarios) throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
         String linea = null;
@@ -120,34 +134,66 @@ public class Academico_Hogwarts {
         return P;
     }
 
+    /**
+     * Este método devuelve una lista de estudiantes
+     * @return retorna lista de estudiantes
+     */
     public ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }
 
+    /**
+     * Este método modifica la lista de estudiante
+     * @param estudiantes retorna la lista de estudiantes
+     */
     public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }
 
+    /**
+     * Este método devuelve la lista de horarios
+     * @return retorna la lista de horarios
+     */
     public ArrayList<Curso> getHorarios() {
         return horarios;
     }
 
+    /**
+     * Este método modifica la lista de horarios
+     * @param horarios lista de horarios
+     */
     public void setHorarios(ArrayList<Curso> horarios) {
         this.horarios = horarios;
     }
 
+    /**
+     * Este método devuelve la lista de profesores
+     * @return retorna la lista de profesores
+     */
     public ArrayList<Profesor> getProfesores() {
         return profesores;
     }
 
+    /**
+     * Este método modifica la lista de profesores
+     * @param profesores lista de profesores
+     */
     public void setProfesores(ArrayList<Profesor> profesores) {
         this.profesores = profesores;
     }
 
+    /**
+     * Este método devuelve la lista de usuarios
+     * @return retorna la lista de usuarios
+     */
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
 
+    /**
+     *Este método modifica la lista de usuarios 
+     * @param usuarios retorna la lista de usuarios
+     */
     public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }

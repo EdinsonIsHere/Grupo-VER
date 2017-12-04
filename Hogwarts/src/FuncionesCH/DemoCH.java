@@ -5,6 +5,16 @@ import java.io.IOException;
 import Personas.*;
 import java.util.Scanner;
 
+/**
+ * Bienvenidos al programa del colegio Hogwarts
+ * El colegio Hogwarts de Magia y Hechicería le ha solicitado construir un 
+ * software para el registro de sus estudiantes y la planificación académica
+ * del año escolar.
+ * Este es la clase principal del programa
+ * @author Victor Espinoza, Rogwi Correa, Edinson Soriano
+ * @version presentación
+ */
+
 public class DemoCH {
     public static void main(String[] args) throws IOException {
         System.out.println("/** ACADEMICO HOGWARTS **/\n");

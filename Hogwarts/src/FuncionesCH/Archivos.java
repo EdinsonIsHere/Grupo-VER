@@ -3,12 +3,17 @@ package FuncionesCH;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 /**
- *
- * @author cajas
+ * Esta clase te permite leer archivos
  */
 public class Archivos {
     
+    /**
+     * Este método permite leer una lista de horariors
+     * @param direccion la ubicación en que se guarda el archivo horarios.txt
+     * @return retorna la lista de cursos
+     */
     public ArrayList<Curso> LeerHorariostxt(String direccion){
         ArrayList<Curso> cursos=new ArrayList<Curso>();
     

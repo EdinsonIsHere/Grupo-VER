@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Personas;
 
 import FuncionesCH.Casa;
@@ -18,42 +14,74 @@ import java.util.GregorianCalendar;
 
 
 /**
- *
- * @author CLARO
+ *Esta clase permite definir los detalles del estudiante
  */
 public class Estudiante extends Persona implements Comparable<Estudiante> {
 
     private Casa casa;
     private int materiasReg;
-
+    
+    /**
+     * Este método permite ingresar valores del estudiante por medio de parámetros
+     * @param casa objeto casa
+     * @param nombre nombre del estudiante
+     * @param apellido apellido del estudiante
+     * @param edad edad del estudiante
+     * @param varita nombre de la varita del estudiante
+     * @param tipoMago  tipo de mago que es el estudiante
+     */
     public Estudiante(Casa casa, String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
         this.casa = casa;
         this.materiasReg = 0;
     }
 
+    /**
+     * Este método devuelve el objeto casa
+     * @return retorna el objeto casa
+     */
     public Casa getCasa() {
         return casa;
     }
 
+    /**
+     * Este método modifica el objeto casa
+     * @param casa  objeto casa
+     */
     public void setCasa(Casa casa) {
         this.casa = casa;
     }
 
+    /**
+     * Este método devuelve el número de materias en que se ha registrado
+     * @return retorna el número de materias
+     */
     public int getMateriasReg() {
         return materiasReg;
     }
 
+    /**
+     * Este método incrementa el número de materias
+     */
     public void incrementar() {
         materiasReg = materiasReg + 1;
     }
 
+    /**
+     * Este método convierte a string los datos del estudiantes
+     * @return retorna los datos del estudiante como frase
+     */
     @Override
     public String toString() {
         String frase = getNombre() + " " + getApellido() + "  --  " + getEdad() + " años  --  " + getCasa() + "  --  " + getMateriasReg() + " materia(s)";
         return frase;
     }
 
+    /**
+     * Este método compara estudiante en orden lexicográfico
+     * @param e estudiante
+     * @return retorna valor 0, 1 ó -1.
+     */
     @Override
     public int compareTo(Estudiante e) {
         if (this.getNombre().equalsIgnoreCase(e.getNombre())) {
@@ -63,6 +91,10 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         }
     }
 
+    /**
+     * Este método retorna el horario a partir del curso
+     * @param cursos lista de cursos
+     */
     public void verHorarios(ArrayList<Curso> cursos) {
         Scanner sc = new Scanner(System.in);
         if (cursos != null) {
@@ -87,6 +119,10 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
 
     }
 
+    /**
+     * Este método permite registrar los cursos
+     * @param cursos lista de cursos
+     */
     public void registrar(ArrayList<Curso> cursos) {
         showCursos(cursos);
         System.out.print("Elija la materia para registrar: ");
@@ -129,6 +165,13 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
 
     }
 
+    /**
+     * Este método permite añadir al archivo registro.txt sus respectivos datos
+     * @param nombre nombre
+     * @param apellido apellido
+     * @param materia nombre de la materia
+     * @param tipoReg tipo de registro
+     */
     public static void addRegistroTXT(String nombre, String apellido, Materia materia, String tipoReg) {
         PrintWriter outputStream = null;
         Calendar fecha = new GregorianCalendar();
@@ -148,6 +191,10 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
 
     }
 
+    /**
+     * Este método muestra si hay cursos creados
+     * @param cursos lista de cursos
+     */
     public static void showCursos(ArrayList<Curso> cursos) {
         if (cursos != null) {
             int i = 1;
@@ -161,6 +208,9 @@ public class Estudiante extends Persona implements Comparable<Estudiante> {
         }
     }
 
+    /**
+     * Este método muestra el valor de volar
+     */
     public void showVuelo() {
         (this.getTipoMago()).volar();
     }

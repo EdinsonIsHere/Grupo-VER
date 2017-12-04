@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Personas;
 
 import FuncionesCH.*;
@@ -16,15 +11,26 @@ import Ordenar.PorEdad;
 import Ordenar.PorMatReg;
 
 /**
- *
- * @author CLARO
+ *Esta clase permite definir los detalles del planificador
  */
 public class Planificador extends Persona {
-
+    
+    /**
+     * Este método  permite definir al planificador dependiendo de parámetros
+     * @param nombre nombre del planificador
+     * @param apellido apellido del planificador
+     * @param edad edad del planificador
+     * @param varita nombre de la varita
+     * @param tipoMago nombre del tipo de mago
+     */
     public Planificador(String nombre, String apellido, int edad, String varita, Hechizero tipoMago) {
         super(nombre, apellido, edad, varita, tipoMago);
     }
 
+    /**
+     * Este método permite crear cursos
+     * @param AH objeto académico Hogwarts
+     */
     public void crearCurso(Academico_Hogwarts AH) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -115,6 +121,10 @@ public class Planificador extends Persona {
         }
     }
 
+    /**
+     * Este método  permite añadir al archivo cursos.txt sus respectivos datos
+     * @param curso objeto curso
+     */
     public static void addCursosTXT(Curso curso) {
         PrintWriter outputStream = null;
         try {
@@ -128,6 +138,10 @@ public class Planificador extends Persona {
         }
     }
 
+    /**
+     * Este método registra los datos del profesor
+     * @param profes lista profesor
+     */
     public void crearProfesor(ArrayList<Profesor> profes) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** CREAR PROFESOR **/\n");
@@ -165,6 +179,10 @@ public class Planificador extends Persona {
 
     }
 
+    /**
+     * Este método  permite añadir al archivo profesores.txt sus respectivos datos
+     * @param P objeto profesor
+     */
     public static void addProfesoresTXT(Profesor P) {
         PrintWriter outputStream = null;
         try {
@@ -187,6 +205,11 @@ public class Planificador extends Persona {
 
     }
 
+    /**
+     * Este método permite ingresar los datos una lista de estudiantes
+     * @param estudiantes lista de estudiantes
+     * @param users lista de usuarios
+     */
     public void crearEstudiante(ArrayList<Estudiante> estudiantes, ArrayList<Usuario> users) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** CREAR ESTUDIANTE **/\n");
@@ -231,6 +254,10 @@ public class Planificador extends Persona {
 
     }
 
+    /**
+     * Este método  permite añadir al archivo estudiantes.txt sus respectivos datos
+     * @param e objeto estudiante
+     */
     public static void addEstudiantesTXT(Estudiante e) {
         PrintWriter outputStream = null;
         try {
@@ -251,6 +278,10 @@ public class Planificador extends Persona {
         }
     }
 
+    /**
+     * Este método permite si hay cursos creados
+     * @param cursos lista de cursos
+     */
     public void verHorarios(ArrayList<Curso> cursos) {
         Scanner sc = new Scanner(System.in);
         if (cursos.size() != 0) {
@@ -276,6 +307,10 @@ public class Planificador extends Persona {
 
     }
 
+    /**
+     * Este método  permite elegir el criterio para ordenar la lista de estudiantes
+     * @param estudiantes lista de estudiantes
+     */
     public void verListadoEstudiantes(ArrayList<Estudiante> estudiantes) {
         Scanner sc = new Scanner(System.in);
         System.out.println("/** LISTADO DE ESTUDIANTES **/");

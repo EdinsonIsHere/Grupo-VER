@@ -7,6 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Esta clase permite acceder al sistema
+ */
 public class Ingreso {
     private String linea = null;
     private String usuario = null;
@@ -14,12 +17,17 @@ public class Ingreso {
     private boolean acceso= false;
     private String tipoAcceso;
    
-    
+   /**
+    * Este método permite acceder al sistema ngresando el usuario y contraseña
+    * @throws FileNotFoundException Se aplica en caso de que no encuentre el archivo
+    * @throws IOException Se aplica en caso de que no haya lineas que leer
+    */ 
     public Ingreso() throws FileNotFoundException, IOException{
  
         
         
         Scanner sc = new Scanner(System.in);
+        
         
         while (acceso == false){
             System.out.println("Ingrese su usuario: ");
@@ -49,7 +57,10 @@ public class Ingreso {
         }
 
     }
-    
+    /**
+     * Este método devuelve el tipo de acceso
+     * @return retorna el tipo de acceso
+     */
     public String getTipoAcceso(){
         return tipoAcceso;
     }

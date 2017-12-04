@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package FuncionesCH;
 
 import Personas.Hechizero;
@@ -15,11 +11,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
- * @author CLARO
+ *Esta clase permite mostrar los distintos menú de opciones
  */
 public class Mostrar {
 
+    /**
+     * Este método muestra las opciones de planificador
+     */
     public static void showMenuPlanificador() {
         System.out.println("\n/** PLANIFICADOR **/\n");
         System.out.println("1. Crear Curso");
@@ -30,6 +28,9 @@ public class Mostrar {
         System.out.println("6. Cerrar sesión");
     }
 
+    /**
+     * Este método muestra las opciones del estudiante
+     */
     public static void showMenuEstudiantes() {
         System.out.println("\n/** ESTUDIANTE **/\n");
         System.out.println("1. Ver Cursos Planificados");
@@ -38,6 +39,9 @@ public class Mostrar {
         System.out.println("4. Cerrar sesión");
     }
 
+    /**
+     * Este método muestra las opciones de las materias
+     */
     public static void showMaterias() {
         System.out.println("\n/** MATERIAS **/\n");
         System.out.println("1. Pociones");
@@ -50,6 +54,9 @@ public class Mostrar {
         System.out.println("8. Vuelo");
     }
 
+    /**
+     * Este método muestra las opciones de tipos de magos
+     */
     public static void showTiposMagos() {
         System.out.println("\nTipos de Magos/Brujas");
         System.out.println("1.Animago");
@@ -57,6 +64,10 @@ public class Mostrar {
         System.out.println("3.Estandar");
     }
 
+    /**
+     * Este método permite elegir el tipo de mago
+     * @return retorna un objeto hechicero
+     */
     public static Hechizero elegirTipoMago() {
         Scanner sc = new Scanner(System.in);
         showTiposMagos();
@@ -90,12 +101,20 @@ public class Mostrar {
         }
     }
 
+    /**
+     * Este método muestra la lista de estudiantes
+     * @param ests lista de estudiantes
+     */
     public static void showListado(ArrayList<Estudiante> ests) {
         for (Estudiante e : ests) {
             System.out.println(e.toString());
         }
     }
 
+    /**
+     * Este método designa la casa
+     * @return retorna un objeto casa
+     */
     public static Casa elegirCasa() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Casa: ");
@@ -121,6 +140,10 @@ public class Mostrar {
         }
     }
 
+    /**
+     * Este método define el dia
+     * @return retorna un objeto dia
+     */
     public static Dia elegirDia() {
         Scanner sc = new Scanner(System.in);
         Dia d;
@@ -154,6 +177,10 @@ public class Mostrar {
         }
     }
 
+    /**
+     * Este método muestra la existencia de profesores
+     * @param AH  objeto de académico hogwarts
+     */
     public static void showProfesores(Academico_Hogwarts AH) {
         ArrayList<Profesor> profes = AH.getProfesores();
         if (profes != null) {
@@ -168,6 +195,12 @@ public class Mostrar {
         }
     }
 
+    /**
+     * Este método devuelve el valor de la existencia del curso
+     * @param num numero de la opcion de las materias
+     * @param AH objeto académico hogwarts
+     * @return retorna el valor de la existencia de curso
+     */
     public static boolean existeCurso(int num, Academico_Hogwarts AH) {
         Materia M = null;
         switch (num) {

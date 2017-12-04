@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package FuncionesCH;
 
 /**
- *
- * @author CLARO
+ * Esta clase permite solo elegir las únicas opciones de los días
  */
 public enum Dia {
     LUNES,MARTES,MIÉRCOLES,JUEVES,VIERNES,SÁBADO,DOMINGO;
